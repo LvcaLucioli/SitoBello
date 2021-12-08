@@ -15,11 +15,11 @@
                 echo "<ul class='accessi nav navbar-nav navbar-right' style='margin-top: -53px; margin-right: 0;'>
                         <li><a href='admin.php'>Ciao $_SESSION[user]</a></li>
                         <li><a href='logout.php'>Esci</a></li>
-                        </ul>";
+                     </ul>";
             }else{
                 echo "<ul class='accessi nav navbar-nav navbar-right' style='margin-top: -53px; margin-right: 0;'>
                         <li><a href='login.php'>Area riservata</a></li>
-                        </ul>";
+                     </ul>";
             }
             ?>
         </div>
