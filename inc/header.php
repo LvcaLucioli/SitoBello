@@ -1,65 +1,32 @@
-<header class="header-area overlay">
-    <nav class="navbar navbar-expand-md navbar-dark">
-		<div class="container">
-			<a href="#" class="navbar-brand">Bootdey.com</a>
-			
-			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
-				<span class="menu-icon-bar"></span>
-				<span class="menu-icon-bar"></span>
-				<span class="menu-icon-bar"></span>
-			</button>
-			
-			<div id="main-nav" class="collapse navbar-collapse">
-				<ul class="navbar-nav ml-auto">
-					<li><a href="#" class="nav-item nav-link active">Home</a></li>
-					<li><a href="#" class="nav-item nav-link">About Us</a></li>
-					<li class="dropdown">
-						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Services</a>
-						<div class="dropdown-menu">
-							<a href="#" class="dropdown-item">Dropdown Item 1</a>
-							<a href="#" class="dropdown-item">Dropdown Item 2</a>
-							<a href="#" class="dropdown-item">Dropdown Item 3</a>
-						</div>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="nav-item nav-link" data-toggle="dropdown">Portfolio</a>
-						<div class="dropdown-menu">
-							<a href="#" class="dropdown-item">Dropdown Item 1</a>
-							<a href="#" class="dropdown-item">Dropdown Item 2</a>
-							<a href="#" class="dropdown-item">Dropdown Item 3</a>
-							<a href="#" class="dropdown-item">Dropdown Item 4</a>
-							<a href="#" class="dropdown-item">Dropdown Item 5</a>
-						</div>
-					</li>
-					<li><a href="#" class="nav-item nav-link">Contact</a></li>
-				</ul>
-			</div>
+<div style="border: 3px solid #ff8000;">
+	<header>
+		<div>
+			<img class="img" src="img\logo.png" alt="Logo">
+		</div>
+	</header>
+	<nav>
+		<!-- menù superiore -->
+		<div class="nav-bar">
+			<ul>
+				<li><a href="Home.php" class="active">Home</a></li>
+				<li><a href="Noleggio.php">Noleggia</a></li>
+				<li><a href="#">Contatti</a></li>
+				<li><a href="#">Informazioni</a></li>
+
+				<?php
+				if (isset($_SESSION['user'])) {
+					echo "
+										<li><a href='ModificaUtente.php'>Ciao $_SESSION[user]</a></li>
+										<li><a href='LogOut.php'>Log out</a></li>
+									";
+				} else {
+					echo "
+										<li><a href='Login.php'>Accedi</a></li>
+										<li><a href='Registrazione.php'>Registrati</a></li>
+									";
+				}
+				?>
+			</ul>
 		</div>
 	</nav>
-	
-	<div class="banner">
-		<div class="container">
-			<h1>Bootstrap 4 Navbar</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec elit ex. Etiam elementum lectus et tempor molestie.</p>
-			<a href="#content" class="button button-primary">Learn More</a>
-		</div>
-	</div>
-</header>
-
-<main>
-	<section id="content" class="content">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec elit ex. Etiam elementum lectus et tempor molestie. Pellentesque vestibulum dui sit amet dui volutpat sollicitudin. Etiam non erat finibus, iaculis nunc vel, convallis eros. Etiam efficitur tempor dui, vitae fringilla ipsum tristique quis. Aliquam erat volutpat. Cras ullamcorper ex et viverra vulputate. Nam lectus ligula, pretium nec risus nec, ultricies fringilla mauris. Proin quis venenatis neque, iaculis porta nulla. </p>
-				</div>
-				<div class="col-md-4">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec elit ex. Etiam elementum lectus et tempor molestie. Pellentesque vestibulum dui sit amet dui volutpat sollicitudin. Etiam non erat finibus, iaculis nunc vel, convallis eros. Etiam efficitur tempor dui, vitae fringilla ipsum tristique quis. Aliquam erat volutpat. Cras ullamcorper ex et viverra vulputate. Nam lectus ligula, pretium nec risus nec, ultricies fringilla mauris. Proin quis venenatis neque, iaculis porta nulla. </p>
-				</div>
-				<div class="col-md-4">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec elit ex. Etiam elementum lectus et tempor molestie. Pellentesque vestibulum dui sit amet dui volutpat sollicitudin. Etiam non erat finibus, iaculis nunc vel, convallis eros. Etiam efficitur tempor dui, vitae fringilla ipsum tristique quis. Aliquam erat volutpat. Cras ullamcorper ex et viverra vulputate. Nam lectus ligula, pretium nec risus nec, ultricies fringilla mauris. Proin quis venenatis neque, iaculis porta nulla. </p>
-				</div>
-			</div>
-		</div>
-	</section>
-</main>
+</div>
