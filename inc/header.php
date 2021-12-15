@@ -1,4 +1,4 @@
-<div style="border: 3px solid #014896;">
+<div class="head-er">
 	<header>
 		<div>
 			<img class="img" src="img\logo.png" alt="Logo">
