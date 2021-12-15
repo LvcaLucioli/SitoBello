@@ -19,10 +19,16 @@ header{
 	height: 90px;
 }
 
+body{
+	background-color: #014896;
+}
+
 /*menù*/
 .head-er{
-	border: 3px solid #014896;
-	border-radius: 10px;
+	border-radius: 13px;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.35) 10px 5px 15px;
+	border: 1px solid #779bcc
 }
 .nav-bar{
 	width:100%;
@@ -45,7 +51,7 @@ nav li {
 
 nav li a {
     display: block;
-    color: #ff8000;
+    color: #014896;
     text-align: center;
     padding: 15px;
     text-decoration: none;
@@ -55,17 +61,9 @@ nav li a {
 nav li a:hover {
     text-decoration: none;
 	transition: 0.6s ease;
-	color: #cc6600;
+	color: #779bcc;
 }
 
 nav li a.active{
-	color: #384047;
-	font-weight: 900;
-}
-
-.accessi{
-	border-left: 0;
-	border-bottom: 0;
-	border-radius: 0 0 8px 0;
-	float: left;
+	color: black;
 }
