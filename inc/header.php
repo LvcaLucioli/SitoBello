@@ -5,25 +5,19 @@
 		</div>
 	</header>
 	<nav>
-		<!-- menù superiore -->
 		<div class="nav-bar">
 			<ul>
 				<li><a href="Home.php" class="active">Home</a></li>
-				<li><a href="Noleggio.php">Noleggia</a></li>
-				<li><a href="#">Contatti</a></li>
-				<li><a href="#">Informazioni</a></li>
+				<li><a href="convenzioni.php">Convenzioni</a></li>
+				<li><a href="news.php">News</a></li>
+				<li><a href="documenti.php">Documenti</a></li>
 
 				<?php
 				if (isset($_SESSION['user'])) {
-					echo "
-										<li><a href='ModificaUtente.php'>Ciao $_SESSION[user]</a></li>
-										<li><a href='LogOut.php'>Log out</a></li>
-									";
+					echo "<li><a href='ModificaUtente.php'>Ciao $_SESSION[user]</a></li>
+							<li><a href='LogOut.php'>Log out</a></li>";
 				} else {
-					echo "
-										<li><a href='Login.php'>Accedi</a></li>
-										<li><a href='Registrazione.php'>Registrati</a></li>
-									";
+					echo "<li><a href='Login.php'>Accedi</a></li>";
 				}
 				?>
 			</ul>
