@@ -1,29 +1,9 @@
-/*.prova{
-	background-color: grey;
-	padding: 10px 10px 10px 10px;
-	height: 60px;
-	margin-top: 10px;
-}
-*/
-header{
-	width: 99%;
-	height: 100px;
-	margin: auto;
-	border-bottom: 0;
-	border-radius: 8px 8px 0 0;
-	margin-top: 7px;
-}
-
-.img{
-	width: 90px;
-	height: 90px;
-}
-
+/* stile generale */
 body{
 	background-color: #014896;
 }
 
-/*menù*/
+/* stile menù */
 .head-er{
 	border-radius: 13px;
 	background-color: white;
@@ -66,4 +46,14 @@ nav li a:hover {
 
 nav li a.active{
 	color: black;
+}
+
+/* stile header */
+.header-container{
+	padding: 10px 10px 10px 10px;
+	margin-top: 10px;
+}
+
+header{
+	margin-top: 7px;
 }

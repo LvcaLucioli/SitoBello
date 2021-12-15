@@ -1,7 +1,19 @@
 <div class="head-er">
 	<header>
 		<div>
-			<img class="img" src="img\logo.png" alt="Logo">
+			<div class="col-lg-4 header-container">
+
+
+			</div>
+
+			<div class="col-lg-4 header-container">
+
+
+			</div>
+
+			<div class="col-lg-4 header-container">
+
+			</div>
 		</div>
 	</header>
 	<nav>
