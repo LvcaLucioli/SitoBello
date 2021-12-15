@@ -7,16 +7,23 @@ body{
 .head-er{
 	border-radius: 13px;
 	background-color: white;
-	box-shadow: rgba(0, 0, 0, 0.35) 10px 5px 15px;
-	border: 1px solid #779bcc
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+	border: 2px solid #779bcc;
+	width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
 }
+
 .nav-bar{
+	margin-top: 2%;
 	width:100%;
 	display: flex;
 	justify-content: center;
 }
+
 nav{
-	font-family: 'Nunito', sans-serif;
+	font-family: sans-serif;
 	font-size: 15px;
 }
 
@@ -50,10 +57,68 @@ nav li a.active{
 
 /* stile header */
 .header-container{
-	padding: 10px 10px 10px 10px;
-	margin-top: 10px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 }
 
 header{
 	margin-top: 7px;
+}
+
+.logoACSI{
+	width: 55%;
+	height: auto;
+	margin-top: 8%;
+}
+
+.logoConi{
+	width: 45%;
+	height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.header-container h4{
+	color: #014896;
+}
+
+.header-container h5{
+	color: #779bcc;
+}
+
+.header-title-container{
+	display: table;
+}
+
+.header-title{
+	display:table-cell;
+    vertical-align:middle;
+}
+
+@media all and (max-width: 990px) {
+	.gap{
+		margin-top: 13%;
+	}
+
+	.header-container h5{
+		font-size: medium;
+	}
+
+	nav ul {
+		margin-top: 8%;
+	}
+
+	.head-er{
+		width: 95%;
+	}
+
+	nav li {
+		float: none;
+	}
 }

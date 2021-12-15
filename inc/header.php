@@ -1,18 +1,19 @@
 <div class="head-er">
 	<header>
-		<div>
+		<div class="row">
 			<div class="col-lg-4 header-container">
-
-
+				<img class="logoACSI" src="img\logoACSI.png" alt="Logo ACSI">
 			</div>
-
-			<div class="col-lg-4 header-container">
-
-
+			
+			<div class="col-lg-4 header-container header-title-container gap">
+				<span class="header-title">
+					<h4>COMITATO PROVINCIALE DI MACERATA</h4>
+					<span><h5>Associazione di Cultura Sport e Tempo libero</h5></span>
+				</span>
 			</div>
-
-			<div class="col-lg-4 header-container">
-
+			
+			<div class="col-lg-4 header-container gap">
+				<img class="logoConi" src="img\logoConi.png" alt="Logo Coni">
 			</div>
 		</div>
 	</header>
