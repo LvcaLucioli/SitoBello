@@ -1,4 +1,4 @@
-<div style="border: 3px solid #ff8000;">
+<div style="border: 3px solid #014896;">
 	<header>
 		<div>
 			<img class="img" src="img\logo.png" alt="Logo">
@@ -17,7 +17,7 @@
 					echo "<li><a href='ModificaUtente.php'>Ciao $_SESSION[user]</a></li>
 							<li><a href='LogOut.php'>Log out</a></li>";
 				} else {
-					echo "<li><a href='Login.php'>Accedi</a></li>";
+					echo "<li><a href='Login.php'>Area riservata</a></li>";
 				}
 				?>
 			</ul>

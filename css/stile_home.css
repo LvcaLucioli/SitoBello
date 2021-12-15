@@ -1,10 +1,10 @@
-.prova{
+/*.prova{
 	background-color: grey;
 	padding: 10px 10px 10px 10px;
 	height: 60px;
 	margin-top: 10px;
 }
-
+*/
 header{
 	width: 99%;
 	height: 100px;
@@ -19,13 +19,11 @@ header{
 	height: 90px;
 }
 
-body {
-  font-family: 'Nunito', sans-serif;
-  color: #384047;
-  background-color: #fff5ec;
-}
-
 /*menù*/
+.head-er{
+	border: 3px solid #014896;
+	border-radius: 10px;
+}
 .nav-bar{
 	width:100%;
 	display: flex;
