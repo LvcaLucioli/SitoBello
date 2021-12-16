@@ -1,10 +1,10 @@
-/* stile generale */
+/* general style */
 body{
 	background-color: #014896;
 	overflow: hidden;
 }
 
-/* stile menù */
+/* menu style */
 .head-er{
 	border-radius: 13px;
 	background-color: white;
@@ -55,7 +55,7 @@ nav li a.active{
 	color: black;
 }
 
-/* stile header */
+/* header style */
 .header-container{
 	margin: 0;
 	padding: 0;
@@ -101,14 +101,15 @@ header{
     vertical-align:middle;
 }
 
-/* stile mobile */
+/* mobile style */
 @media all and (max-width: 990px) {
-	/* .gap{
-		margin-top: 13%;
-	} */
-
+	/* central header container style */
 	.header-container h5{
-		font-size: medium;
+		font-size: small;
+	}
+
+	.header-container h4{
+		color: #014896;
 	}
 
 	nav ul {
