@@ -2,7 +2,7 @@
 	<header>
 		<div class="row">
 			<div class="col-4 header-container">
-				<img class="logoACSI" src="img\logoACSI.png" alt="Logo ACSI">
+				<img class="logoACSI" src="img\logoACSI.jpg" alt="Logo ACSI">
 			</div>
 			
 			<div class="col-4 header-container header-title-container gap">
@@ -20,7 +20,7 @@
 	<nav>
 		<div class="nav-bar">
 			<ul>
-				<li><a href="Home.php" class="active">Home</a></li>
+				<li class="activee"><a href="Home.php" class="active">Home</a></li>
 				<li><a href="convenzioni.php">Convenzioni</a></li>
 				<li><a href="news.php">News</a></li>
 				<li><a href="documenti.php">Documenti</a></li>

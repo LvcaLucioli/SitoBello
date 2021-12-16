@@ -53,6 +53,13 @@ nav li a:hover {
 
 nav li a.active{
 	color: black;
+	border-bottom: 2px;
+	border-color: black;
+}
+
+nav li.activee{
+	border-bottom: 2px;
+	border-color: black;
 }
 
 /* header style */
