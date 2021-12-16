@@ -1,14 +1,14 @@
 /* stile generale */
 body{
 	background-color: #014896;
+	overflow: hidden;
 }
 
 /* stile menù */
 .head-er{
 	border-radius: 13px;
 	background-color: white;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 80px, rgba(0, 0, 0, 0.12) 0px -12px 20px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-	border: 2px solid #779bcc;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	width: 98%;
 	margin-left: auto;
 	margin-right: auto;
@@ -101,10 +101,11 @@ header{
     vertical-align:middle;
 }
 
+/* stile mobile */
 @media all and (max-width: 990px) {
-	.gap{
+	/* .gap{
 		margin-top: 13%;
-	}
+	} */
 
 	.header-container h5{
 		font-size: medium;
@@ -121,4 +122,9 @@ header{
 	nav li {
 		float: none;
 	}
-}
+
+	.logoACSI{
+		width: 30%;
+	}
+
+} 
