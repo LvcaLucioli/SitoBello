@@ -2,7 +2,7 @@
 	<header>
 		<div class="row">
 			<div class="col-4 header-container">
-				<img class="logoACSI" src="img\logoACSI.png" alt="Logo ACSI">
+				<img class="logoACSI" src="img\logoACSI.jpg" alt="Logo ACSI">
 			</div>
 			
 			<div class="col-4 header-container header-title-container gap">
