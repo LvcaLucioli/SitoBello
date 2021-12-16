@@ -16,14 +16,14 @@ body{
 }
 
 .nav-bar{
-	margin-top: 2%;
+	margin-top: 0;
 	width:100%;
 	display: flex;
 	justify-content: center;
 }
 
 nav{
-	font-family: sans-serif;
+	font-family: Trebuchet MS;
 	font-size: 15px;
 }
 
@@ -90,6 +90,7 @@ header{
 
 .header-container h5{
 	color: #779bcc;
+	font-weight: 400;
 }
 
 .header-title-container{
@@ -110,7 +111,8 @@ header{
 	}
 
 	.header-container h5{
-		font-size: 2.2vw;
+		font-size: 2.3vw;
+		margin-top: -0.5em;
 	}
 
 	.header-container h4{
@@ -119,13 +121,16 @@ header{
 	}
 
 	.logoACSI{
-		width: 70%;
+		width: 65%;
+		height: 65%;
 		margin-left: 10%;
+		margin-top: 12%;
 	}
 
 	.logoConi{
 		width: 60%;
 		margin-top: 15%;
+		margin-left: 17%;
 	}
 
 	/* navbar style */
@@ -133,4 +138,7 @@ header{
 		float: none;
 	}
 
+	nav ul {
+		margin-bottom: 1%;
+	}
 } 
