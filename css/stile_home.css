@@ -110,23 +110,25 @@ header{
 	}
 
 	.header-container h5{
-		font-size: small;
+		font-size: 2.2vw;
 	}
 
 	.header-container h4{
-		color: #014896;
+		font-size: 2.5vw;
+		margin-top: 12%;
 	}
 
 	.logoACSI{
-		width: 30%;
+		width: 70%;
+		margin-left: 10%;
 	}
 
+	.logoConi{
+		width: 60%;
+		margin-top: 15%;
+	}
 
 	/* navbar style */
-	nav ul {
-		margin-top: 8%;
-	}
-
 	nav li {
 		float: none;
 	}
