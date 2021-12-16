@@ -103,7 +103,8 @@ header{
 }
 
 /* mobile style */
-@media all and (max-width: 990px) {
+
+@media screen and (min-width:320px) and (max-width:640px {
 	
 	/* header style */
 	.head-er{
@@ -141,4 +142,4 @@ header{
 	nav ul {
 		margin-bottom: 1%;
 	}
-} 
+}  
