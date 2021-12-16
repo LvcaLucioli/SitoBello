@@ -3,19 +3,16 @@
     <div class="mySlides">
         <div class="numbertext">1 / 3</div>
         <img src="img/campo.jpg" style="width:100%">
-        <div class="text">Caption Text</div>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">2 / 3</div>
         <img src="img/mare.jpg" style="width:100%">
-        <div class="text">Caption Two</div>
     </div>
 
     <div class="mySlides">
         <div class="numbertext">3 / 3</div>
         <img src="img/gatti.jpg" style="width:100%">
-        <div class="text">Caption Three</div>
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
