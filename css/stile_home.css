@@ -103,7 +103,12 @@ header{
 
 /* mobile style */
 @media all and (max-width: 990px) {
-	/* central header container style */
+	
+	/* header style */
+	.head-er{
+		width: 95%;
+	}
+
 	.header-container h5{
 		font-size: small;
 	}
@@ -112,20 +117,18 @@ header{
 		color: #014896;
 	}
 
+	.logoACSI{
+		width: 30%;
+	}
+
+
+	/* navbar style */
 	nav ul {
 		margin-top: 8%;
 	}
 
-	.head-er{
-		width: 95%;
-	}
-
 	nav li {
 		float: none;
-	}
-
-	.logoACSI{
-		width: 30%;
 	}
 
 } 
