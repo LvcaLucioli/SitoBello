@@ -104,9 +104,12 @@ header{
 }
 
 /* mobile style */
-
 @media screen and (min-width:320px) and (max-width:640px) {
 	
+	body{
+		overflow: hidden;
+	}
+
 	/* header style */
 	.head-er{
 		width: 95%;
