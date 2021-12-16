@@ -1,0 +1,154 @@
+/* general style */
+body{
+	background-color: #014896;
+	overflow: hidden;
+}
+
+/* menu style */
+.head-er{
+	border-radius: 13px;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	width: 98%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+}
+
+.nav-bar{
+	margin-top: 0;
+	width:100%;
+	display: flex;
+	justify-content: center;
+}
+
+nav{
+	font-family: Trebuchet MS;
+	font-size: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: #014896;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+	font-weight: 600;
+}
+
+nav li a:hover {
+    text-decoration: none;
+	transition: 0.6s ease;
+	color: #779bcc;
+}
+
+nav li a.active{
+	color: black;
+	border-bottom: 2px solid black;
+}
+
+/* header style */
+.header-container{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+header{
+	margin-top: 7px;
+}
+
+.logoACSI{
+	width: 55%;
+	height: auto;
+	margin-top: 8%;
+}
+
+.logoConi{
+	width: 45%;
+	height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.header-container h4{
+	color: #014896;
+}
+
+.header-container h5{
+	color: #779bcc;
+	font-weight: 400;
+}
+
+.header-title-container{
+	display: table;
+}
+
+.header-title{
+	display:table-cell;
+    vertical-align:middle;
+}
+
+/* mobile style */
+
+@media screen and (min-width:320px) and (max-width:640px) {
+	
+	/* header style */
+	.head-er{
+		width: 95%;
+	}
+
+	.header-container h5{
+		font-size: 2.3vw;
+		margin-top: -0.5em;
+	}
+
+	.header-container h4{
+		font-size: 2.5vw;
+		margin-top: 12%;
+	}
+
+	.logoACSI{
+		width: 65%;
+		height: 65%;
+		margin-left: 10%;
+		margin-top: 12%;
+	}
+
+	.logoConi{
+		width: 60%;
+		margin-top: 15%;
+		margin-left: 17%;
+	}
+
+	/* navbar style */
+	nav li {
+		float: none;
+	}
+
+	nav ul {
+		margin-bottom: 4%;
+	}
+
+	nav li a.active{
+		border-bottom: 0;
+	}
+
+	nav li a{
+		padding-bottom: 0;
+	}
+}  
