@@ -149,15 +149,20 @@ header {
 /*slideshow*/
 
 .mySlides {
-    display: none
+    display: none;
 }
 
 img {
     vertical-align: middle;
+    border-radius: 13px;
 }
 
 
 /* Slideshow container */
+
+.slideshow-wrapper {
+    padding: 2%;
+}
 
 .slideshow-container {
     max-width: 55%;

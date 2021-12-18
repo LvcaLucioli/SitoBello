@@ -18,7 +18,7 @@ $_SESSION['previousPage'] = 'Home.php';
 	<title>Noleggiopattino</title>
 </head>
 
-<body onload="showSlides(1)">
+<body onload="showSlides()">
 
 	<?php
 	require 'inc\header.php';
