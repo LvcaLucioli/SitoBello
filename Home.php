@@ -15,13 +15,16 @@ $_SESSION['previousPage'] = 'Home.php';
 	<link rel="stylesheet" type="text/css" href="css\stile_generale.css">
 	<link rel="stylesheet" type="text/css" href="css\stile_home.css">
 	<link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/slideshow.js"></script>
 	<title>Noleggiopattino</title>
 </head>
 
-<body>
+<body onload="showSlides()">
+
 	<?php
 	require 'inc\header.php';
 	require 'inc\sectionHome.php';
+	require 'inc\slideshow.php';
 	?>
 </body>
 
