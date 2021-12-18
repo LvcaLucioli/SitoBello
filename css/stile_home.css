@@ -1,8 +1,13 @@
 /* general style */
 
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #014896;
-    overflow: hidden;
+    position: absolute;
 }
 
 
@@ -165,7 +170,8 @@ img {
 }
 
 .slideshow-container {
-    max-width: 55%;
+    max-width: 80%;
+    height: auto;
     position: relative;
     margin: auto;
 }
