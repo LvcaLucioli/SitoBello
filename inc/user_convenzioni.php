@@ -16,9 +16,10 @@ for ($i = 0; $i < $row; $i++) {
     $tmp[$i] = mysqli_fetch_assoc($risultato);
 }
 mysqli_close($connection);
-echo getcwd();
+
+echo '<div class="row">';
 for ($i = 0; $i < $row; $i++) {
-    echo '<div class="row">
+    echo '
             <div class="col-4 header-container header-title-container gap">
                 <span class="header-title">
                     <h4>'.$tmp[$i]['company_name'].'</h4>
@@ -27,9 +28,10 @@ for ($i = 0; $i < $row; $i++) {
                         <h5>'.$tmp[$i]['phone'].'</h5>
                         <h5>'.$tmp[$i]['address'].'</h5>
                         <h5>'.$tmp[$i]['description'].'</h5>
-                        <img class="logoACSI-foo" src="'.$tmp[$i]['logo_path'].'" alt="">
+                        <img class="logoACSI-foo" src="https://github.com/LvcaLucioli/SitoBello/blob/conventions/'.$tmp[$i]['logo_path'].'?raw=true" alt="">
                     </span>
                 </span>
             </div>
-        </div>';
+        ';
 }
+echo '</div>';

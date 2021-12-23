@@ -28,4 +28,8 @@ $_SESSION['previousPage'] = 'Home.php';
 	?>
 </body>
 
+<?php
+require 'inc\footer.php'; 
+?>
+
 </html>

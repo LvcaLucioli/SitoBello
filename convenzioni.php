@@ -22,8 +22,9 @@ $_SESSION['previousPage'] = 'convenzioni.php';
 <body>
 
 	<?php
+    require 'config.inc.php';
 	require 'inc\header.php';
-	require 'inc\admin_convenzioni.php';
+	require 'inc\user_convenzioni.php';
 	require 'inc\footer.php';
 	?>
 </body>
