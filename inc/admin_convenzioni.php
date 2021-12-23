@@ -1,4 +1,4 @@
-<form id="upload_convenzione" method="POST" action="inc/post.php" enctype="multipart/form-data">
+<form id="upload_convenzione" method="POST" action="post.php" enctype="multipart/form-data">
     nome azienda<input type="text" name="company_name"><br>
     città<input type="text" name="city"><br>
     indirizzo<input type="text" name="address"><br>
