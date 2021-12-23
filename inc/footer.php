@@ -1,4 +1,4 @@
-<div class="foo-ter">
+<div class="foo-ter" style="bottom:0;">
     <footer>
         <div class="row">
             <div class="col-4 header-container header-title-container gap">

@@ -8,6 +8,7 @@ html {
 body {
     background-color: #014896;
     position: absolute;
+    height: 100%;
 }
 
 
@@ -153,4 +154,22 @@ header {
     nav li a {
         padding-bottom: 0;
     }
+}
+
+.foo-ter {
+    border-radius: 13px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    display: block;
+}
+
+.logoACSI-foo {
+    width: 55%;
+    height: auto;
+    margin-top: 6%;
+    margin-bottom: 6%;
 }
