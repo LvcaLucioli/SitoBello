@@ -24,8 +24,11 @@ $_SESSION['previousPage'] = 'convenzioni.php';
     <?php
     require_once __DIR__ . '/config.inc.php';
     require_once __DIR__ . '/inc/header.php';
-    require_once __DIR__ . '/inc/user_convenzioni.php';
-    require_once __DIR__ . '/inc/footer.php';
+    if (isset($_SESSION['user'])) {
+        require_once __DIR__ . '/inc/admin_convenzioni.php';
+    } else {
+        require_once __DIR__ . '/inc/user_convenzioni.php';
+    }
     ?>
 </body>
 <?php
