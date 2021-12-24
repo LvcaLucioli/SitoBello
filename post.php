@@ -1,5 +1,5 @@
 <?php
-require 'config.inc.php';
+require_once __DIR__ . '/config.inc.php';
 
 $target_dir = "convenzioni/"; 
 $target_file = $target_dir . basename($_FILES["logo"]["name"]);
