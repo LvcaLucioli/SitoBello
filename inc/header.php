@@ -27,19 +27,6 @@
 				<li><a href="notizie.php">News</a></li>
 				<li><a href="documenti.php">Documenti</a></li>
 				<li><a href="sport.php">Sport convenzionati</a></li>
-
-				<?php
-				if (isset($_SESSION['user'])) {
-					echo "<li><a href='ModificaUtente.php'>Ciao $_SESSION[user]</a></li>
-							<li><a href='LogOut.php'>Log out</a></li>";
-				} else {
-					echo "<li>
-							<a style='color: #f28383' href='Login.php'>
-								Area riservata
-							</a>
-						  </li>";
-				}
-				?>
 			</ul>
 		</div>
 	</nav>

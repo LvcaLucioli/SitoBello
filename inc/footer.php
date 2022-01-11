@@ -10,7 +10,17 @@
                 </span>
             </div>
             <div class="col-4 header-container">
-                <img class="logoACSI-foo" src="img\logoACSI.jpg" alt="Logo ACSI">
+                <?php
+				if (isset($_SESSION['user'])) {
+					echo "<a href='LogOut.php'>
+                                Esci
+                          </a>";
+				} else {
+					echo "<a href='Login.php'>
+								<img class='logoACSI-foo' src='img\logoACSI.jpg' alt='Logo ACSI'>
+						  </a>";
+				}
+				?>
             </div>
             <div class="col-4 header-container header-title-container gap">
                 <span class="header-title">
