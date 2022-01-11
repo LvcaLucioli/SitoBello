@@ -2,7 +2,9 @@
 	<header>
 		<div class="row">
 			<div class="col-4 header-container">
+			<a href='Home.php'>
 				<img class="logoACSI" src="img\logoACSI.jpg" alt="Logo ACSI">
+			</a>
 			</div>
 			
 			<div class="col-4 header-container header-title-container gap">
@@ -22,8 +24,9 @@
 			<ul>
 				<li class="activee"><a href="index.php" class="active">Home</a></li>
 				<li><a href="convenzioni.php">Convenzioni</a></li>
-				<li><a href="news.php">News</a></li>
+				<li><a href="notizie.php">News</a></li>
 				<li><a href="documenti.php">Documenti</a></li>
+				<li><a href="sport.php">Sport convenzionati</a></li>
 
 				<?php
 				if (isset($_SESSION['user'])) {
