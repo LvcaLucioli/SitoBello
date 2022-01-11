@@ -1,8 +1,7 @@
 /* general style */
 
 html {
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 body {
@@ -118,6 +117,9 @@ header {
 /* mobile style */
 
 @media screen and (min-width:320px) and (max-width:640px) {
+    body{
+        overflow: hidden;
+    }
     /* header style */
     .head-er {
         width: 95%;
@@ -163,7 +165,6 @@ header {
     width: 98%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1%;
     display: block;
 }
 

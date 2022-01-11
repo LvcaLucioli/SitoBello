@@ -16,7 +16,7 @@ $_SESSION['previousPage'] = 'index.php';
 	<link rel="stylesheet" type="text/css" href="css\stile_home.css">
 	<link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/slideshow.js"></script>
-	<title>Noleggiopattino</title>
+	<title>ACSI Macerata</title>
 </head>
 
 <body onload="showSlides()">
