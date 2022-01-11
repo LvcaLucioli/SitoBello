@@ -25,6 +25,7 @@ $_SESSION['previousPage'] = 'Home.php';
 	require 'inc\header.php';
 	require 'inc\sectionHome.php';
 	require 'inc\slideshow.php';
+	require 'inc\footer.php';
 	?>
 </body>
 
