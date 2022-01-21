@@ -2,6 +2,7 @@
 
 html {
     overflow-x: hidden !important;
+    overflow-y: scroll !important;
 }
 
 body {
@@ -113,51 +114,6 @@ header {
     vertical-align: middle;
 }
 
-
-/* mobile style */
-
-@media screen and (min-width:320px) and (max-width:640px) {
-    body{
-        overflow: hidden;
-    }
-    /* header style */
-    .head-er {
-        width: 95%;
-    }
-    .header-container h5 {
-        font-size: 2.3vw;
-        margin-top: -0.5em;
-    }
-    .header-container h4 {
-        font-size: 2.5vw;
-        margin-top: 12%;
-    }
-    .logoACSI {
-        width: 65%;
-        height: 65%;
-        margin-left: 10%;
-        margin-top: 12%;
-    }
-    .logoConi {
-        width: 60%;
-        margin-top: 15%;
-        margin-left: 17%;
-    }
-    /* navbar style */
-    nav li {
-        float: none;
-    }
-    nav ul {
-        margin-bottom: 4%;
-    }
-    nav li a.active {
-        border-bottom: 0;
-    }
-    nav li a {
-        padding-bottom: 0;
-    }
-}
-
 .foo-ter {
     border-radius: 13px;
     background-color: white;
@@ -173,4 +129,58 @@ header {
     height: auto;
     margin-top: 6%;
     margin-bottom: 6%;
+}
+
+
+/* mobile style */
+
+@media screen and (min-width:320px) and (max-width:640px) {
+    body {
+        overflow: auto;
+    }
+    /* header style */
+    .head-er {
+        width: 95%;
+    }
+    .header-container h5 {
+        font-size: 2.3vw;
+        margin-top: -0.5em;
+    }
+    .header-container h4 {
+        font-size: 2.5vw;
+        margin-top: 12%;
+    }
+    .logoACSI {
+        width: 80%;
+        height: 65%;
+        margin-left: 10%;
+        margin-top: 12%;
+    }
+    .logoConi {
+        width: 60%;
+        margin-top: 12%;
+        margin-left: 17%;
+    }
+    /* navbar style */
+    nav li {
+        float: none;
+    }
+    nav ul {
+        margin-bottom: 4%;
+    }
+    nav li a.active {
+        border-bottom: 0;
+    }
+    nav li a {
+        padding-bottom: 0;
+    }
+    .foo-ter {
+        margin-left: 2%;
+        width: 96%;
+    }
+    .logoACSI-foo {
+        width: 63%;
+        height: 66%;
+        margin-top: 10%;
+    }
 }

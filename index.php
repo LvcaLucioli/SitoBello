@@ -23,7 +23,6 @@ $_SESSION['previousPage'] = 'index.php';
 
 	<?php
 	require_once __DIR__ . '/inc/header.php';
-	require_once __DIR__ . '/inc/sectionHome.php';
 	require_once __DIR__ . '/inc/slideshow.php';
 	?>
 </body>

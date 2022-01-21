@@ -9,25 +9,56 @@
     border-radius: 13px;
 }
 
+.slide {
+    border-radius: 13px;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
+    height: 50vh;
+}
+
 
 /* Slideshow container */
 
 .slideshow-wrapper {
-    padding: 2%;
+    padding: 3%;
 }
 
 .slideshow-container {
+    height: auto;
+    position: relative;
+    margin: auto;
+    padding: 0;
+}
+
+.text-container {
     max-width: 80%;
     height: auto;
     position: relative;
     margin: auto;
 }
 
+.row-custom {
+    background-color: white;
+    border-radius: 13px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 
 /* On smaller screens, decrease text size */
 
-@media only screen and (max-width: 300px) {
+@media screen and (min-width:320px) and (max-width:640px) {
     .text {
         font-size: 11px
+    }
+    .slide {
+        margin-bottom: 10%;
+        height: 40vh;
+        width: 70vh;
+    }
+    .slideshow-wrapper {
+        padding: 7%;
+        width: 100%;
+    }
+    .myText {
+        margin-bottom: 10%;
     }
 }
