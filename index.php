@@ -16,20 +16,17 @@ $_SESSION['previousPage'] = 'index.php';
 	<link rel="stylesheet" type="text/css" href="css\stile_home.css">
 	<link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="js/slideshow.js"></script>
-	<title>Noleggiopattino</title>
+	<title>ACSI Macerata</title>
 </head>
 
 <body onload="showSlides()">
-
-	<?php
-	require_once __DIR__ . '/inc/header.php';
-	require_once __DIR__ . '/inc/sectionHome.php';
-	require_once __DIR__ . '/inc/slideshow.php';
-	?>
+	<div class="wrap">
+		<?php
+		require_once __DIR__ . '/inc/header.php';
+		require_once __DIR__ . '/inc/slideshow.php';
+		require_once __DIR__ . '/inc/footer.php';
+		?>
+	</div>
 </body>
-
-<?php
-require_once __DIR__ . '/inc/footer.php'; 
-?>
 
 </html>

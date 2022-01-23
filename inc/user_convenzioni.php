@@ -34,4 +34,10 @@ for ($i = 0; $i < $row; $i++) {
             </div>
         ';
 }
+<<<<<<< HEAD
+=======
+if (isset($_SESSION['user'])) {
+    require_once __DIR__ . '/admin_convenzioni.php';
+}
+>>>>>>> home-fix
 echo '</div>';
