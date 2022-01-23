@@ -6,6 +6,7 @@ body {
     height: 100%;
     overflow-x: hidden !important;
     overflow-y: scroll;
+    font-family: Trebuchet MS;
 }
 
 
@@ -128,17 +129,8 @@ header {
     margin-bottom: 6%;
 }
 
-.row-cust {
-    width: 98%;
-    overflow: hidden;
-}
-
 .wrap {
     overflow: hidden;
-}
-
-.gap {
-    position: relative;
 }
 
 
