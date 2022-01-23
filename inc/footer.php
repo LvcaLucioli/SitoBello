@@ -1,6 +1,6 @@
 <div class="foo-ter" style="bottom:0;">
     <footer>
-        <div class="row">
+        <div class="row row-cust">
             <div class="col-4 header-container header-title-container gap">
                 <span class="header-title">
                     <h4>Contatti</h4>
@@ -22,7 +22,7 @@
 				}
 				?>
             </div>
-            <div class="col-4 header-container header-title-container gap">
+            <div class="col-4 header-container header-title-container">
                 <span class="header-title">
                     <h4>SIAMO QUI</h4>
                     <span>

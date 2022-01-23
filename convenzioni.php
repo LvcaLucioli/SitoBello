@@ -20,19 +20,18 @@ $_SESSION['previousPage'] = 'convenzioni.php';
 </head>
 
 <body>
-
-    <?php
-    require_once __DIR__ . '/config.inc.php';
-    require_once __DIR__ . '/inc/header.php';
-    if (isset($_SESSION['user'])) {
-        require_once __DIR__ . '/inc/admin_convenzioni.php';
-    } else {
-        require_once __DIR__ . '/inc/user_convenzioni.php';
-    }
-    ?>
+    <div class="wrap">
+        <?php
+        require_once __DIR__ . '/config.inc.php';
+        require_once __DIR__ . '/inc/header.php';
+        if (isset($_SESSION['user'])) {
+            require_once __DIR__ . '/inc/admin_convenzioni.php';
+        } else {
+            require_once __DIR__ . '/inc/user_convenzioni.php';
+        }
+        require_once __DIR__ . '/inc/footer.php';
+        ?>
+    </div>
 </body>
-<?php
-require_once __DIR__ . '/inc/footer.php';
-?>
 
 </html>

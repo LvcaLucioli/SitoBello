@@ -1,14 +1,11 @@
 /* general style */
 
-html {
-    overflow-x: hidden !important;
-    overflow-y: scroll !important;
-}
-
 body {
     background-color: #014896;
     position: absolute;
     height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: scroll;
 }
 
 
@@ -131,13 +128,23 @@ header {
     margin-bottom: 6%;
 }
 
+.row-cust {
+    width: 98%;
+    overflow: hidden;
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+.gap {
+    position: relative;
+}
+
 
 /* mobile style */
 
 @media screen and (min-width:320px) and (max-width:640px) {
-    body {
-        overflow: auto;
-    }
     /* header style */
     .head-er {
         width: 95%;
@@ -151,13 +158,14 @@ header {
         margin-top: 12%;
     }
     .logoACSI {
-        width: 80%;
-        height: 65%;
+        width: 60%;
+        height: auto;
         margin-left: 10%;
-        margin-top: 12%;
+        margin-top: 11.5%;
     }
     .logoConi {
         width: 60%;
+        height: auto;
         margin-top: 12%;
         margin-left: 17%;
     }
@@ -179,8 +187,8 @@ header {
         width: 96%;
     }
     .logoACSI-foo {
-        width: 63%;
-        height: 66%;
+        width: 55%;
+        height: auto;
         margin-top: 10%;
     }
 }

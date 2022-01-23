@@ -20,15 +20,12 @@ $_SESSION['previousPage'] = 'index.php';
 </head>
 
 <body onload="showSlides()">
-
-	<?php
-	require_once __DIR__ . '/inc/header.php';
-	require_once __DIR__ . '/inc/slideshow.php';
-	?>
+	<div class="wrap">
+		<?php
+		require_once __DIR__ . '/inc/header.php';
+		require_once __DIR__ . '/inc/slideshow.php';
+		require_once __DIR__ . '/inc/footer.php';
+		?>
+	</div>
 </body>
-
-<?php
-require_once __DIR__ . '/inc/footer.php'; 
-?>
-
 </html>
