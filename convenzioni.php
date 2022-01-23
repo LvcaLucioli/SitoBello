@@ -16,26 +16,6 @@ $_SESSION['previousPage'] = 'convenzioni.php';
     <link rel="stylesheet" type="text/css" href="css\stile_home.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/slideshow.js"></script>
-<<<<<<< HEAD
-    <title>Noleggiopattino</title>
-</head>
-
-<body>
-
-    <?php
-    require_once __DIR__ . '/config.inc.php';
-    require_once __DIR__ . '/inc/header.php';
-    if (isset($_SESSION['user'])) {
-        require_once __DIR__ . '/inc/admin_convenzioni.php';
-    } else {
-        require_once __DIR__ . '/inc/user_convenzioni.php';
-    }
-    ?>
-</body>
-<?php
-require_once __DIR__ . '/inc/footer.php';
-?>
-=======
     <title>ACSI Macerata</title>
 </head>
 
@@ -53,6 +33,5 @@ require_once __DIR__ . '/inc/footer.php';
         ?>
     </div>
 </body>
->>>>>>> home-fix
 
 </html>
