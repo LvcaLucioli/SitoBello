@@ -22,7 +22,7 @@
 	<nav>
 		<div class="nav-bar">
 			<ul>
-				<li class="activee"><a href="Home.php" class="active">Home</a></li>
+				<li class="activee"><a href="index.php" class="active">Home</a></li>
 				<li><a href="convenzioni.php">Convenzioni</a></li>
 				<li><a href="notizie.php">News</a></li>
 				<li><a href="documenti.php">Documenti</a></li>
