@@ -1,7 +1,6 @@
 <div class="slideshow-wrapper">
     <div class="row row-custom">
         <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 slideshow-container">
-
             <div class="mySlides">
                 <img class="slide" src="img/skyline.jpg" style="width:100%" class="img-slideshow">
             </div>
