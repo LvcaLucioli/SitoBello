@@ -2,7 +2,6 @@
 	<header>
 		<div class="row">
 			<div class="col-4 header-container">
-
 				<a href='index.php'>
 					<img class="logoACSI" src="img\logoACSI.jpg" alt="Logo ACSI">
 				</a>
