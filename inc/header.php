@@ -24,11 +24,39 @@
 	<nav>
 		<div class="nav-bar">
 			<ul>
-				<li class="activee"><a href="index.php" class="active">Home</a></li>
-				<li><a href="convenzioni.php">Convenzioni</a></li>
-				<li><a href="notizie.php">News</a></li>
-				<li><a href="documenti.php">Documenti</a></li>
-				<li><a href="sport.php">Sport convenzionati</a></li>
+				<?php
+				$url= $_SERVER['REQUEST_URI']; 
+				
+				if (str_contains($url, "index")){
+					echo "<li class='activee'><a href='index.php' class='active'>Home</a></li>";
+				} else {
+					echo "<li><a href='index.php'>Home</a></li>";
+				}
+
+				if (str_contains($url, "convenzioni")){
+					echo "<li class='activee'><a href='convenzioni.php' class='active'>Convenzioni</a></li>";
+				} else {
+					echo "<li><a href='convenzioni.php'>Convenzioni</a></li>";
+				}
+
+				if (str_contains($url, "notizie")){
+					echo "<li class='activee'><a href='notizie.php' class='active'>News</a></li>";
+				} else {
+					echo "<li><a href='notizie.php'>News</a></li>";
+				}
+
+				if (str_contains($url, "documenti")){
+					echo "<li class='activee'><a href='documenti.php' class='active'>Documenti</a></li>";
+				} else {
+					echo "<li><a href='documenti.php'>Documenti</a></li>";
+				}
+
+				if (str_contains($url, "sport")){
+					echo "<li class='activee'><a href='sport.php' class='active'>Sport convenzionati</a></li>";
+				} else {
+					echo "<li><a href='sport.php'>Sport convenzionati</a></li>";
+				}
+				?>
 			</ul>
 		</div>
 	</nav>
