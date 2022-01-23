@@ -75,10 +75,11 @@ function showPage($flag, $user, $err)
                   <title>Accedi</title>
                 </head>
                 <body>
+                <div class='wrap'>
                 ";
   require_once __DIR__ . '/inc/header.php';
   echo "
-                  <form action='' method='post' style='box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 15px; margin-top:50px;' >
+                  <form action='' method='post' >
                     <h2>Accedi all'area riservata</h2>";
 
   if ($flag == 1) { //visualizzazione dell'errore in caso di login errato
@@ -97,6 +98,7 @@ function showPage($flag, $user, $err)
                     <button class='accedi' type='submit' id='submit'>Accedi</button>
                   </form>
                   <br>
+                </div>
                 </body>
               </html>";
 }
