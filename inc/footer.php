@@ -16,7 +16,7 @@
                             <span class='header-title'>
                                 <h4 style='font-size: medium; margin-top: 7%;'>Accesso effettuato come Amministratore</h4>
                                 <span>
-                                <a href='LogOut.php' class='exit'><h5>Esci</h5></a>
+                                <a href='LogOut.php'><h5 style='color: #f28383;'>Esci</h5></a>
                                 </span>
                             </span>
                           </div>";

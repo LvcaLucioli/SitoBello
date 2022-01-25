@@ -16,8 +16,12 @@ for ($i = 0; $i < $row; $i++) {
     $tmp[$i] = mysqli_fetch_assoc($risultato);
 }
 mysqli_close($connection);
-echo '<div class="row">';
+
 for ($i = 0; $i < $row; $i++) {
+    if ($i % 2 == 0) {
+        echo '<div class="row">';
+    }
+
     echo '<div class="col-4 header-container header-title-container gap">
                 <span class="header-title">';
                 if(isset($tmp[$i]['title']))    echo '<h4>' . $tmp[$i]['title'] . '</h4>';
@@ -30,9 +34,8 @@ for ($i = 0; $i < $row; $i++) {
                 </span>
             </div>
         ';
-}
 
-if (isset($_SESSION['user'])) {
-    require_once __DIR__ . '/admin_notizie.php';
+    if ($i % 2 == 0) {
+        echo '/<div>';
+    }
 }
-echo '</div>';

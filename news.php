@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$_SESSION['previousPage'] = 'notizie.php';
+$_SESSION['previousPage'] = 'news.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +23,8 @@ $_SESSION['previousPage'] = 'notizie.php';
 		<?php
 		require_once __DIR__ . '/config.inc.php';
         require_once __DIR__ . '/inc/header.php';
-        if (isset($_SESSION['user']))   require_once __DIR__ . '/inc/admin_notizie.php';
-        else    require_once __DIR__ . '/inc/user_notizie.php';
+        if (isset($_SESSION['user']))   require_once __DIR__ . '/inc/admin_news.php';
+        else    require_once __DIR__ . '/inc/user_news.php';
 		require_once __DIR__ . '/inc/footer.php';
 		?>
 	</div>
