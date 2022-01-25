@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['username'])) { //
+if (isset($_POST['username'])) {
 
   require "config.inc.php";
 
@@ -13,20 +13,21 @@ if (isset($_POST['username'])) { //
   }
 
   if (CRYPT_SHA256 == 1) {
-    $pwd = hash('sha256', $_POST['password']);
+    $pwd = hash('sha256', mysqli_real_escape_string($conn, $_POST['password']));
   }
+  $user = mysqli_real_escape_string($conn, $_POST['username']);
+
   //preparazione query di inserimento
-  $query = 'SELECT `username`, `password` FROM `mauro` WHERE `password` = "' . $pwd . '"';
+  $query = "SELECT `username`, `password` FROM `mauro` WHERE `username` = '$user' AND `password` = '$pwd'";
   $result = mysqli_query($conn, $query);
-  //var_dump($result);
-  if (!$result) { //se la query riporta un errore
-    echo 'ciaooo';
-    $user = $_POST['username'];
+  
+  if (mysqli_num_rows($result) == 0) { //se la query riporta un errore
+    
     $err = "Password non valida"; //errore per il campo invalido
 
     //-- ricerca username --
     //preparazione query
-    $query = "SELECT * FROM mauro WHERE username = '$_POST[username]'";
+    $query = "SELECT * FROM `mauro` WHERE `username` = '$user'";
 
     //esecuzione query
     $result = mysqli_query($conn, $query);
@@ -36,23 +37,25 @@ if (isset($_POST['username'])) { //
       $user = "";
     }
 
+    mysqli_close($conn);
     showPage(1, $user, $err); //visualizzazione form con errore
 
   } else { //se la query va a buon fine
+
+    mysqli_close($conn);
     session_start();
     $_SESSION['user'] = $_POST['username'];
     echo "<script>
     function redirect() {
-      window.location.replace('index.php');
+      window.location.replace('".$_SESSION['previousPage']."');
       return false;
     }
     </script>
     <body onload='redirect()'>
     </body>
     ";
-  }
 
-  mysqli_close($conn);
+  }
 } else {
   showPage(0, "", ""); //visualizzazione form
 }
