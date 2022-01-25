@@ -1,7 +1,7 @@
 <div class="foo-ter" style="bottom:0;">
     <footer>
         <div class="row">
-            <div class="col-4 header-container header-title-container gap">
+            <div class="col-4 header-container header-title-container">
                 <span class="header-title">
                     <h4>Contatti</h4>
                     <span>
@@ -9,19 +9,26 @@
                     </span>
                 </span>
             </div>
-            <div class="col-4 header-container">
-                <?php
-				if (isset($_SESSION['user'])) {
-					echo "<a href='LogOut.php'>
-                                Esci
-                          </a>";
-				} else {
-					echo "<a href='Login.php'>
-								<img class='logoACSI-foo' src='img\logoACSI.jpg' alt='Logo ACSI'>
-						  </a>";
-				}
-				?>
-            </div>
+            
+            <?php
+                if (isset($_SESSION['user'])) {
+                    echo "<div class='col-4 header-container header-title-container'>
+                            <span class='header-title'>
+                                <h4 style='font-size: medium; margin-top: 7%;'>Accesso effettuato come Amministratore</h4>
+                                <span>
+                                <a href='LogOut.php' class='exit'><h5>Esci</h5></a>
+                                </span>
+                            </span>
+                          </div>";
+                } else {
+                    echo "<div class='col-4 header-container'>
+                            <a href='Login.php'>
+                                <img class='logoACSI-foo' src='img\logoACSI.jpg' alt='Logo ACSI'>
+                            </a>
+                          </div>";
+                }
+            ?>
+            
             <div class="col-4 header-container header-title-container">
                 <span class="header-title">
                     <h4>SIAMO QUI</h4>
