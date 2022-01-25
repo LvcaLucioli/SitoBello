@@ -1,6 +1,6 @@
 <?php
 	$hostname = 'localhost';
-	$username = 'id18171665_larochelle';
-	$password = '/yU|ii?VaC-BI5Zd';
+	$username = 'localhost';
+	$password = '';
 	$db_name = 'id18171665_convenzioni_db';
 ?>

@@ -39,10 +39,10 @@
 					echo "<li><a href='convenzioni.php'>Convenzioni</a></li>";
 				}
 
-				if (str_contains($url, "notizie")){
-					echo "<li class='activee'><a href='notizie.php' class='active'>News</a></li>";
+				if (str_contains($url, "news")){
+					echo "<li class='activee'><a href='news.php' class='active'>News</a></li>";
 				} else {
-					echo "<li><a href='notizie.php'>News</a></li>";
+					echo "<li><a href='news.php'>News</a></li>";
 				}
 
 				if (str_contains($url, "documenti")){
