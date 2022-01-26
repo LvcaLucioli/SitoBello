@@ -43,6 +43,13 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.myText {
+    font-size: 1.2vw;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* On smaller screens, decrease text size */
 
@@ -61,5 +68,7 @@
     }
     .myText {
         margin-bottom: 10%;
+        max-width: 96%;
+        font-size: 3.2vw;
     }
 }
