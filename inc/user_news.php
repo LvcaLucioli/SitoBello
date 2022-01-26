@@ -21,14 +21,14 @@ $f = 0;
 echo "<div class='news-gap'></div>";
 
 for ($i = $row - 1; $i >= 0; $i--) {
-    if (($i % 2 == 0) && ($i != $row - 1)) {
+    if ($f == 2) {
         echo '</div>';
         $f = 0;
     }
 
-    if ($i % 2 == 0) {
+    if ($f == 0) {
         echo '<div class="row row-news">';
-        $f = 1;
+        $f++;
     }
 
     echo '<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 header-container header-title-container news-wrap">
