@@ -16,22 +16,19 @@ $_SESSION['previousPage'] = 'convenzioni.php';
     <link rel="stylesheet" type="text/css" href="css\stile_home.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/slideshow.js"></script>
-    <title>ACSI Macerata</title>
+    <title>Noleggiopattino</title>
 </head>
 
 <body>
-    <div class="wrap">
-        <?php
-        require_once __DIR__ . '/config.inc.php';
-        require_once __DIR__ . '/inc/header.php';
-        if (isset($_SESSION['user'])) {
-            require_once __DIR__ . '/inc/admin_convenzioni.php';
-        } else {
-            require_once __DIR__ . '/inc/user_convenzioni.php';
-        }
-        require_once __DIR__ . '/inc/footer.php';
-        ?>
-    </div>
+
+    <?php
+    require_once __DIR__ . '/config.inc.php';
+    require_once __DIR__ . '/inc/header.php';
+    require_once __DIR__ . '/inc/user_convenzioni.php';
+    ?>
 </body>
+<?php
+require_once __DIR__ . '/inc/footer.php';
+?>
 
 </html>
