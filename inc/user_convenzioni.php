@@ -35,7 +35,7 @@ for ($i = 0; $i < $row; $i++) {
             <span class="header-title conv-container th-lg">
                     <span>
                         <h4>'.$tmp[$i]['company_name'].'</h4>
-                        <img class="logoACSI-foo" src="img\logoACSI.jpg" alt="">
+                        <img class="logoACSI-foo" src="https://acsimacerata.site/convenzioni/'.$tmp[$i]['logo_path'].'" alt="">
                         
                         <h4 class="sub-title" style="font-size: medium; color: #779bcc; padding: 0;"><b>Descrizione:</b></h4>
                         <h5>'.$tmp[$i]['description'].'</h5>
@@ -61,6 +61,3 @@ for ($i = 0; $i < $row; $i++) {
 }
 
 if ($f) echo '</div>';
-
-
-// https://github.com/LvcaLucioli/SitoBello/blob/conventions/'.$tmp[$i]['logo_path'].'?raw=true
