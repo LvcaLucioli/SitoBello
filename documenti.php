@@ -21,6 +21,7 @@ $_SESSION['previousPage'] = 'documenti.php';
 <body>
 	<div class="wrap">
 		<?php
+		require_once __DIR__ . '/config.inc.php';
 		require_once __DIR__ . '/inc/header.php';
 		if (isset($_SESSION['user']))   require_once __DIR__ . '/inc/admin_documenti.php';
         	else    require_once __DIR__ . '/inc/user_documenti.php';

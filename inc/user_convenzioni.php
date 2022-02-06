@@ -43,6 +43,11 @@ for ($i = 0; $i < $row; $i++) {
                         <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Telefono:</b></h4></div>
                         <div class="col-8"><h5>'.$tmp[$i]['phone'].'</h5></div>
                         </div>
+
+                        <div class="row" style="margin-top: 3%">
+                        <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>E-mail:</b></h4></div>
+                        <div class="col-8"><h5>'.$tmp[$i]['email'].'</h5></div>
+                        </div>
                     </span>
                 </span>
             </div>
