@@ -17,20 +17,9 @@ for ($i = 0; $i < $row; $i++) {
 }
 mysqli_close($connection);
 
-$f = 0;
 echo "<div class='conv-gap'></div>";
-
+echo '<div class="row row-conv">';
 for ($i = 0; $i < $row; $i++) {
-    if ($f == 2) {
-        echo '</div>';
-        $f = 0;
-    }
-
-    if ($f == 0) {
-        echo '<div class="row row-conv">';
-        $f++;
-    }
-
     echo '<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 header-container header-title-container conv-wrap">
             <span class="header-title conv-container th-lg">
                     <span>
@@ -59,5 +48,4 @@ for ($i = 0; $i < $row; $i++) {
             </div>
         ';
 }
-
-if ($f) echo '</div>';
+echo '</div>';

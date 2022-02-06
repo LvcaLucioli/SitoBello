@@ -17,20 +17,9 @@ for ($i = 0; $i < $row; $i++) {
 }
 mysqli_close($connection);
 
-$f = 0;
 echo "<div class='news-gap'></div>";
-
+echo '<div class="row row-news">';
 for ($i = $row - 1; $i >= 0; $i--) {
-    if ($f == 2) {
-        echo '</div>';
-        $f = 0;
-    }
-
-    if ($f == 0) {
-        echo '<div class="row row-news">';
-        $f++;
-    }
-
     echo '<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 header-container header-title-container news-wrap">
                 <span class="header-title news-container th-lg">';
 
@@ -44,5 +33,4 @@ for ($i = $row - 1; $i >= 0; $i--) {
                 </span>
           </div>';
 }
-
-if ($f) echo '</div>';
+echo '</div>';
