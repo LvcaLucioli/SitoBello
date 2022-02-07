@@ -1,72 +1,46 @@
-.sport-wrap {
-    padding: 3%;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-top: 0;
-}
-
-.sport-container {
-    background-color: white;
-    border-radius: 13px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
-    display: flex;
-    flex-direction: column;
-    padding: 3%;
-}
-
-.sport-title {
-    text-align: left;
-    margin-bottom: 0 !important;
-    margin-right: -3.15%;
-    background-color: #b5c8e3;
-    border-right: 0;
-    border-radius: 8px 0 0 8px;
-    padding: 1%;
-}
-
-.sport-container h4 {
-    font-size: xx-large;
-    margin-bottom: 3%;
-}
-
-.sport-container h5 {
-    text-align: left;
-    color: #014896;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.row-sport {
-    overflow: hidden;
-}
-
-.sport-gap {
-    margin-top: 3%;
-}
-
-
-/* mobile style */
-
-@media screen and (min-width:320px) and (max-width:640px) {
     .sport-wrap {
-        padding: 8%;
-        padding-top: 0%;
+        padding: 3%;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 0;
+        padding-bottom: 2%;
     }
-    .sport-gap {
-        margin-top: 8%;
-    }
+    
     .sport-container {
-        padding: 5%;
+        background-color: white;
+        border-radius: 13px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
     }
-    .sport-container h5 {
-        font-size: large;
+    
+    .row-sport {
+        overflow: hidden;
     }
-    .sport-container h4 {
-        margin-top: 0;
+    
+    .sport-gap {
+        margin-top: 2%;
     }
-    .sub-title {
-        margin-right: -5.5%;
-        padding: 2%;
-        padding-left: 3%;
+    
+    .sport-container iframe {
+        height: 80vh;
+        border-radius: 13px;
+        box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px;
     }
-}
+    /* mobile style */
+    
+    @media screen and (min-width:320px) and (max-width:640px) {
+        .sport-container iframe {
+            height: 100vh;
+        }
+        .sport-wrap {
+            padding: 2.3%;
+        }
+        .sport-gap {
+            margin-top: 1%;
+        }
+        .sport-container {
+            padding: 2%;
+        }
+    }

@@ -24,14 +24,28 @@ $_SESSION['previousPage'] = 'sport.php';
 		require_once __DIR__ . '/config.inc.php';
 		require_once __DIR__ . '/inc/header.php';
 		
+		$qr = "SELECT * FROM `sport` WHERE 1";
+
+		//connessione al db ed esecuzione query
+		$connection = mysqli_connect($hostname, $username, $password, $db_name)
+			or die("connessione fallita");
+
+		$risultato = mysqli_query($connection, $qr)
+			or die("Query non valida: " . mysqli_error($connection));
+
+		$row = mysqli_num_rows($risultato);
+		$tmp = mysqli_fetch_assoc($risultato);
+
+		mysqli_close($connection);
+
         echo "<div class='sport-gap'></div>";
 
-        echo '<div class="row row-sport">
+        echo '<div class="row-sport">
                 <div class="col-12 header-container header-title-container sport-wrap">
                     <span class="header-title sport-container">
-                    <iframe src="http://docs.google.com/gview?url=http://storm-beaten-instan.000webhostapp.com/news/attachments/' . $tmp[$i]['attachment_path'] . '&embedded=true" frameborder="0"></iframe>
+                    <iframe src="http://docs.google.com/gview?url=https://acsimacerata.site/news/attachments/' . $tmp['path'] . '&embedded=true" frameborder="0"></iframe>
                     </span>
-                </div>;
+                </div>
               </div>';
 
 		require_once __DIR__ . '/inc/footer.php';
