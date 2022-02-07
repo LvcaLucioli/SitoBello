@@ -21,7 +21,7 @@ echo "<div class='news-gap'></div>";
 echo '<div class="row row-news">';
 for ($i = $row - 1; $i >= 0; $i--) {
     echo '<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 header-container header-title-container news-wrap">
-                <span class="header-title news-container th-lg">';
+                <span class="header-title news-container">';
 
                 if($tmp[$i]['title'] != "")    echo "<h4>".$tmp[$i]['title']."</h4>";
                 echo '<span>';
