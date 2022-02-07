@@ -26,8 +26,8 @@ for ($i = $row - 1; $i >= 0; $i--) {
                 if($tmp[$i]['title'] != "")    echo "<h4>".$tmp[$i]['title']."</h4>";
                 echo '<span>';
                 if($tmp[$i]['body'] != "") echo '<p>' . $tmp[$i]['body'] . '</p>';
-                if($tmp[$i]['image_path'] != "")   echo '<img class="logoACSI-foo" src="https://storm-beaten-instan.000webhostapp.com/news/images/' . $tmp[$i]['image_path'] . '" alt="">';
-                if($tmp[$i]['attachment_path'] != "")  echo '<iframe src="http://docs.google.com/gview?url=http://storm-beaten-instan.000webhostapp.com/news/attachments/' . $tmp[$i]['attachment_path'] . '&embedded=true" frameborder="0"></iframe>';
+                if($tmp[$i]['image_path'] != "")   echo '<img class="logoACSI-foo" src="https://acsimacerata.site/news/images/' . $tmp[$i]['image_path'] . '" alt="">';
+                if($tmp[$i]['attachment_path'] != "")  echo '<iframe src="http://docs.google.com/gview?url=https://acsimacerata.site/news/attachments/' . $tmp[$i]['attachment_path'] . '&embedded=true" frameborder="0"></iframe>';
                 echo '</span>
 
                 </span>
