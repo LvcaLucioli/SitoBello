@@ -17,18 +17,21 @@ function ftp_upload(string $dest_file, string $source_file)
         echo "FTP connection has failed!";
         exit;
     } else {
-        ftp_chdir($ftp, "/public_html");
-        ftp_chdir($ftp, "convenzioni");
+        // ftp_chdir($ftp, "/public_html");
+        // ftp_chdir($ftp, "convenzioni");
+        // ftp_chdir($ftp, "logos");
+        $source_file = "convenzioni/logos/".$source_file;
+        
         move_uploaded_file($_FILES["logo_path"]["tmp_name"], $source_file);
 
-        $upload = ftp_put($ftp, $dest_file, $source_file, FTP_BINARY);
+        // $upload = ftp_put($ftp, $dest_file, $source_file, FTP_BINARY);
 
-        // check upload status
-        if (!$upload) {
-            echo "FTP upload has failed!";
-        } else {
-            echo "Uploaded $source_file to $ftp_host as $dest_file";
-        }
+        // // check upload status
+        // if (!$upload) {
+        //     echo "FTP upload has failed!";
+        // } else {
+        //     echo "Uploaded $source_file to $ftp_host as $dest_file";
+        // }
     }
     // close the FTP connection 
     ftp_close($ftp);
@@ -55,6 +58,7 @@ function my_ftp_delete(string $target_file)
     } else {
         ftp_chdir($ftp, "/public_html");
         ftp_chdir($ftp, "convenzioni");
+        ftp_chdir($ftp, "logos");
 
         if (ftp_delete($ftp, $target_file)) {
             echo "$target_file deleted successful\n";
@@ -147,7 +151,7 @@ for ($i = 0; $i < $row; $i++) {
 
                             <input type="text" name="company_name" value="' . $tmp[$i]['company_name'] . '"><br>';
     if (isset($tmp[$i]['logo_path']))  echo
-    '<img class="logoACSI-foo" src="https://acsimacerata.site/convenzioni/' . $tmp[$i]['logo_path'] . '" alt=""><br>
+    '<img class="logoACSI-foo" src="https://acsimacerata.site/convenzioni/logos/' . $tmp[$i]['logo_path'] . '" alt=""><br>
                             <input type="file" name="logo_path"><br>';
     echo '              <h4 class="sub-title" style="font-size: medium; color: #779bcc; padding: 0;"><b>Descrizione:</b></h4>
                             

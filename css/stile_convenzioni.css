@@ -27,7 +27,7 @@
 .conv-container h5 {
     text-align: left;
     color: #014896;
-    margin-top: 1%;
+    margin-top: 2%;
     margin-bottom: 0;
 }
 
@@ -67,7 +67,6 @@
     }
     .conv-container h5 {
         font-size: large;
-        padding-top: 1%;
     }
     .conv-container h4 {
         margin-top: 0;

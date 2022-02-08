@@ -97,6 +97,12 @@ function showPage($flag, $user, $err)
                     <label for='password'>Password:</label>
                     <input type='password' name='password' title='Inserire la propria password' style='margin-bottom: 20px' required>
                     </fieldset>
+
+                    <div class='header-container header-title-container text'>
+                      <span class='header-title'>
+                          <h5>!!&nbsp&nbspAREA RISERVATA AL SOLO PERSONALE AUTORIZZATO ALLA GESTIONE DEL SITO&nbsp&nbsp!!</h5>
+                      </span>
+                    </div>
                   
                     <button class='accedi' type='submit' id='submit'>Accedi</button>
                   </form>

@@ -25,37 +25,45 @@
 		<div class="nav-bar">
 			<ul>
 				<?php
-				$url= $_SERVER['REQUEST_URI']; 
-				
-				if (str_contains($url, "index")){
-					echo "<li class='activee'><a href='index.php' class='active'>Home</a></li>";
-				} else {
-					echo "<li><a href='index.php'>Home</a></li>";
-				}
+				$url= $_SERVER['REQUEST_URI'];
+				$out = "";
+				$f = 0;
 
 				if (str_contains($url, "convenzioni")){
-					echo "<li class='activee'><a href='convenzioni.php' class='active'>Convenzioni</a></li>";
+					$out = $out."<li class='activee'><a href='convenzioni.php' class='active'>Convenzioni</a></li>";
+					$f = 1;
 				} else {
-					echo "<li><a href='convenzioni.php'>Convenzioni</a></li>";
+					$out = $out."<li><a href='convenzioni.php'>Convenzioni</a></li>";
 				}
 
 				if (str_contains($url, "news")){
-					echo "<li class='activee'><a href='news.php' class='active'>News</a></li>";
+					$out = $out."<li class='activee'><a href='news.php' class='active'>News</a></li>";
+					$f = 1;
 				} else {
-					echo "<li><a href='news.php'>News</a></li>";
+					$out = $out."<li><a href='news.php'>News</a></li>";
 				}
 
 				if (str_contains($url, "documenti")){
-					echo "<li class='activee'><a href='documenti.php' class='active'>Documenti</a></li>";
+					$out = $out."<li class='activee'><a href='documenti.php' class='active'>Documenti</a></li>";
+					$f = 1;
 				} else {
-					echo "<li><a href='documenti.php'>Documenti</a></li>";
+					$out = $out."<li><a href='documenti.php'>Documenti</a></li>";
 				}
 
 				if (str_contains($url, "sport")){
-					echo "<li class='activee'><a href='sport.php' class='active'>Sport convenzionati</a></li>";
+					$out = $out."<li class='activee'><a href='sport.php' class='active'>Sport convenzionati</a></li>";
+					$f = 1;
 				} else {
-					echo "<li><a href='sport.php'>Sport convenzionati</a></li>";
+					$out = $out."<li><a href='sport.php'>Sport convenzionati</a></li>";
 				}
+
+				if ($f == 0){
+					$out = "<li class='activee'><a href='index.php' class='active'>Home</a></li>".$out;
+				} else {
+					$out = "<li><a href='index.php'>Home</a></li>".$out;
+				}
+
+				echo $out;
 				?>
 			</ul>
 		</div>

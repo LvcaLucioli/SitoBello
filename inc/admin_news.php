@@ -21,26 +21,28 @@ function ftp_upload(string $dest_file, string $source_file, int $type)
     } else {
         echo "connesso bro";
         if ($type == 0) {
-            ftp_chdir($ftp, "/public_html");
-            ftp_chdir($ftp, "news");
-            ftp_chdir($ftp, "images");
+            // ftp_chdir($ftp, "/public_html");
+            // ftp_chdir($ftp, "news");
+            // ftp_chdir($ftp, "images");
+            $source_file = "news/images/" . $source_file;
             move_uploaded_file($_FILES["image_path"]["tmp_name"], $source_file);
         }
         if ($type == 1) {
-            ftp_chdir($ftp, "/public_html");
-            ftp_chdir($ftp, "news");
-            ftp_chdir($ftp, "attachments");
+            // ftp_chdir($ftp, "/public_html");
+            // ftp_chdir($ftp, "news");
+            // ftp_chdir($ftp, "attachments");
+            $source_file = "news/attachments/" . $source_file;
             move_uploaded_file($_FILES["attachment_path"]["tmp_name"], $source_file);
         }
 
-        $upload = ftp_put($ftp, $dest_file, $source_file, FTP_BINARY);
+        // $upload = ftp_put($ftp, $dest_file, $source_file, FTP_BINARY);
 
-        // check upload status
-        if (!$upload) {
-            echo "FTP upload has failed!";
-        } else {
-            echo "Uploaded $source_file to $ftp_host as $dest_file";
-        }
+        // // check upload status
+        // if (!$upload) {
+        //     echo "FTP upload has failed!";
+        // } else {
+        //     echo "Uploaded $source_file to $ftp_host as $dest_file";
+        // }
     }
     // close the FTP connection 
     ftp_close($ftp);
@@ -174,7 +176,7 @@ for ($i = $row - 1; $i >= 0; $i--) {
                                         <img class="logoACSI-foo" src="https://acsimacerata.site/news/images/' . $tmp[$i]['image_path'] . '" alt="">';
     echo '              <input type="file" name="image_path"><br>';
     if ($tmp[$i]['attachment_path'] != "")  echo '
-                        <iframe src="http://docs.google.com/gview?url=https://acsimacerata.site/news/attachments/' . $tmp[$i]['attachment_path'] . '&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>';
+                        <iframe src="http://docs.google.com/gview?url=https://acsimacerata.site/news/attachments/' . $tmp[$i]['attachment_path'] . '&embedded=true&view=fitV" style="width:600px; height:500px;" frameborder="0"></iframe>';
     echo '              <input type="file" name="attachment_path"><br>';
     echo '<input type="submit" name="submit" value="aggiorna">';
     echo '<input type="submit" name="delete" value="cancella">';
