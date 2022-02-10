@@ -46,7 +46,7 @@ for ($i = 0; $i < $row; $i++) {
 
     for ($j = 0; $j < $row_doc; $j++){
         echo '<li><h5>
-                    <a href="'.$documents[$j]['path'].'">'
+                    <a href="'.$documents[$j]['path'].'" target="_blank">'
                         .$documents[$j]['title'].
                     '</a>
               </h5></li>';

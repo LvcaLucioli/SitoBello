@@ -19,11 +19,16 @@ $_SESSION['previousPage'] = 'index.php';
 	<title>ACSI Macerata</title>
 </head>
 
-<body onload="showSlides()">
+<body>
 	<div class="wrap">
 		<?php
 		require_once __DIR__ . '/inc/header.php';
 		require_once __DIR__ . '/inc/slideshow.php';
+		
+		echo '<script type = "text/javascript">  
+                    showSlides() 
+              </script>';
+              
 		require_once __DIR__ . '/inc/footer.php';
 		?>
 	</div>
