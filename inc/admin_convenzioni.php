@@ -1,7 +1,7 @@
 <?php
 
 
-function ftp_upload(string $dest_file, string $source_file)
+function ftp_upload(string $dest_file)
 {
     $timeout = 90;
     $ftp_port = 21;
@@ -14,24 +14,10 @@ function ftp_upload(string $dest_file, string $source_file)
 
     // check connection
     if ((!$ftp) || (!$login_result)) {
-        echo "FTP connection has failed!";
+        echo 'here';
         exit;
     } else {
-        // ftp_chdir($ftp, "/public_html");
-        // ftp_chdir($ftp, "convenzioni");
-        // ftp_chdir($ftp, "logos");
-        $source_file = "convenzioni/logos/".$source_file;
-        
-        move_uploaded_file($_FILES["logo_path"]["tmp_name"], $source_file);
-
-        // $upload = ftp_put($ftp, $dest_file, $source_file, FTP_BINARY);
-
-        // // check upload status
-        // if (!$upload) {
-        //     echo "FTP upload has failed!";
-        // } else {
-        //     echo "Uploaded $source_file to $ftp_host as $dest_file";
-        // }
+        if(move_uploaded_file($_FILES["logo_path"]["tmp_name"], "convenzioni/logos/".$dest_file))  echo " OK ";
     }
     // close the FTP connection 
     ftp_close($ftp);
@@ -52,19 +38,13 @@ function my_ftp_delete(string $target_file)
 
     // check connection
     if ((!$ftp) || (!$login_result)) {
-        echo "FTP connection has failed!";
-        //echo "Attempted to connect to $ftp_server for user $ftp_user_name"; 
         exit;
     } else {
         ftp_chdir($ftp, "/public_html");
         ftp_chdir($ftp, "convenzioni");
         ftp_chdir($ftp, "logos");
+        ftp_delete($ftp, $target_file);
 
-        if (ftp_delete($ftp, $target_file)) {
-            echo "$target_file deleted successful\n";
-        } else {
-            echo "could not delete $target_file\n";
-        }
     }
     // close the FTP connection 
     ftp_close($ftp);
@@ -75,10 +55,10 @@ $connection = mysqli_connect($hostname, $username, $password, $db_name)
 
 
 if (isset($_POST['delete'])) {
-    $get_file_query = "SELECT `logo_path` FROM `conventions` WHERE `convention_key`=". $_POST['convention_key']; 
+    $get_file_query = "SELECT `logo_path` FROM `conventions` WHERE `convention_key`=" . $_POST['convention_key'];
     $to_delete = mysqli_query($connection, $get_file_query)
-            or die("Query non valida: " . mysqli_error($connection));
-    if($conv = mysqli_fetch_assoc($to_delete)){
+        or die("Query non valida: " . mysqli_error($connection));
+    if ($conv = mysqli_fetch_assoc($to_delete)) {
         my_ftp_delete($conv['logo_path']);
     }
 
@@ -91,30 +71,63 @@ if (isset($_POST['delete'])) {
 
 if (isset($_POST['submit'])) { // if mauro is trying to upload or update a news
     $insert_query = "";
-    if ($_FILES["logo_path"]["name"] != "") {
-        $dest_image = ftp_upload($_FILES["logo_path"]["name"], $_FILES["logo_path"]["name"]);
-    }
 
-    if (isset($_POST['convention_key'])) {
+    if (isset($_POST['convention_key'])) { // updating case
+
         $check_query = "SELECT * FROM `conventions` WHERE `convention_key` = '" . $_POST['convention_key'] . "'";
         $isTheConvPresent = mysqli_query($connection, $check_query)
             or die("Query non valida: " . mysqli_error($connection));
 
-        if ($conv = mysqli_fetch_assoc($isTheConvPresent)) {
-            if (!isset($dest_image)) $dest_image = $conv['logo_path'];
-            $insert_query = "UPDATE `conventions` SET `company_name`='" . $_POST['company_name'] . "',
-                `city`='" . $_POST['city'] . "',`logo_path`='" . $dest_image . "',`address`='" . $_POST['address'] . "',
+        $dest_path = "";
+
+        if ($conv = mysqli_fetch_assoc($isTheConvPresent)) { // should be present at this point
+            if ($conv['logo_path'] != $_FILES['logo_path']['name']) { // if uploading new logo [(b: no logo, a: logo), (b: logo, a: logo)]
+                if($conv['logo_path'] != "")    my_ftp_delete($conv['logo_path']);
+                $dest_file = ftp_upload($conv['convention_key'] . $_FILES["logo_path"]["name"]); // es: 1nomefile.jpg
+                // uploaded new logo
+                $insert_query = "UPDATE `conventions` SET `company_name`='" . $_POST['company_name'] . "',
+                `city`='" . $_POST['city'] . "', `logo_path`='" . $dest_file . "',`address`='" . $_POST['address'] . "',
+                `phone`='" . $_POST['phone'] . "', `description`='" . $_POST['description'] . "', `email`='" . $_POST['email'] . "'  
+                WHERE `convention_key`='" . $_POST['convention_key'] . "'";
+                // w/ logo query
+            } else {
+                $insert_query = "UPDATE `conventions` SET `company_name`='" . $_POST['company_name'] . "',
+                `city`='" . $_POST['city'] . "',`address`='" . $_POST['address'] . "',
                 `phone`='" . $_POST['phone'] . "', `description`='" . $_POST['description'] . "', `email`='" . $_POST['email'] . "'  
                 WHERE `convention_key`='" . $conv['convention_key'] . "'";
+                // no logo query
+            }
+            $risultato = mysqli_query($connection, $insert_query)
+                or die("Query non valida: " . mysqli_error($connection));
+            // everything good here  
         }
-    } else {
-        if (!isset($dest_image))  $dest_image = "";
-        $insert_query = "INSERT INTO `conventions` (`company_name`, `city`, `logo_path`, `address`, `phone`, `description`, `email`) VALUES 
-        ('" . $_POST['company_name'] . "', '" . $_POST['city'] . "', '" . $dest_image . "', '" . $_POST['address'] . "', '" . $_POST['phone'] . "', '" . $_POST['description'] . "', '" . $_POST['email'] . "')";
-    }
+    } else { // brand new conv
+        $insert_query = "INSERT INTO `conventions` (`company_name`, `city`, `address`, `phone`, `description`, `email`) VALUES 
+        ('" . $_POST['company_name'] . "', '" . $_POST['city'] . "', '" . $_POST['address'] . "', '" . $_POST['phone'] . "', '" . $_POST['description'] . "', '" . $_POST['email'] . "')";
 
-    $risultato = mysqli_query($connection, $insert_query)
-        or die("Query non valida: " . mysqli_error($connection));
+        $risultato = mysqli_query($connection, $insert_query)
+            or die("insert: " . mysqli_error($connection));
+
+        // here we have a new conv in the db w/out logo
+
+        if ($_FILES['logo_path']['name'] != "") {
+            $get_key = "SELECT `convention_key` FROM `conventions` WHERE `company_name`='" . $_POST['company_name'] . "' AND
+            `city`='" . $_POST['city'] . "' AND `address`='" . $_POST['address'] . "' AND
+            `phone`='" . $_POST['phone'] . "' AND `description`='" . $_POST['description'] . "' AND `email`='" . $_POST['email'] . "'";
+
+            $risultato = mysqli_query($connection, $get_key)
+                or die("key: " . mysqli_error($connection));
+
+            $key = mysqli_fetch_assoc($risultato);
+            $dest_path = $key['convention_key'] . $_FILES["logo_path"]["name"];
+            ftp_upload($dest_path);
+            echo $_FILES['logo_path']['name'];
+
+            $upload_logo = "UPDATE `conventions` SET `logo_path`='" . $dest_path . "' WHERE `convention_key`='" . $key['convention_key'] . "'";
+            $risultato = mysqli_query($connection, $upload_logo)
+                or die("logo: " . mysqli_error($connection));
+        }
+    }
 }
 
 
@@ -145,7 +158,7 @@ for ($i = 0; $i < $row; $i++) {
     
                 <form id="update" method="POST" enctype="multipart/form-data">      
                      
-                    <span class="header-title conv-container th-lg">
+                    <span class="header-title conv-container">
                         <span>
                             <input type="hidden" name="convention_key" value="' . $tmp[$i]['convention_key'] . '"><br>
 
@@ -197,8 +210,8 @@ for ($i = 0; $i < $row; $i++) {
 
 // for uploading a convention
 echo '  <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 header-container header-title-container conv-wrap">
-            <form id="upload" method="POST" action="" enctype="multipart/form-data">
-                <span class="header-title conv-container th-lg">
+            <form id="upload" method="POST" enctype="multipart/form-data">
+                <span class="header-title conv-container">
                     Compagnia<input type="text" name="company_name"><br>
                     <input type="file" name="logo_path"><br>
                     Descrizione<textarea rows="4" cols="50" name="description" maxlenght="400"></textarea>

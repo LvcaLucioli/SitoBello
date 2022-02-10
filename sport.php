@@ -23,8 +23,8 @@ $_SESSION['previousPage'] = 'sport.php';
 		<?php
 		require_once __DIR__ . '/config.inc.php';
 		require_once __DIR__ . '/inc/header.php';
-		
-		$qr = "SELECT * FROM `sport` WHERE 1";
+
+		$qr = "SELECT * FROM `sport` WHERE `sport_key`=1";
 
 		//connessione al db ed esecuzione query
 		$connection = mysqli_connect($hostname, $username, $password, $db_name)
@@ -36,18 +36,17 @@ $_SESSION['previousPage'] = 'sport.php';
 		$row = mysqli_num_rows($risultato);
 		$tmp = mysqli_fetch_assoc($risultato);
 
-		mysqli_close($connection);
+		echo "<div class='sport-gap'></div>";
 
-        echo "<div class='sport-gap'></div>";
-
-        echo '<div class="row-sport">
+		echo '<div class="row-sport">
                 <div class="col-12 header-container header-title-container sport-wrap">
                     <span class="header-title sport-container">
-                    <iframe src="http://docs.google.com/gview?url=https://acsimacerata.site/news/attachments/' . $tmp['path'] . '&embedded=true" frameborder="0"></iframe>
+                    <iframe src="http://docs.google.com/gview?url=https://acsimacerata.site/sport/' . $tmp['path'] . '&embedded=true" frameborder="0"></iframe>
                     </span>
                 </div>
               </div>';
-
+		if (isset($_SESSION['user'])) require_once __DIR__ . '/inc/admin_sport.php';
+		mysqli_close($connection);
 		require_once __DIR__ . '/inc/footer.php';
 		?>
 	</div>

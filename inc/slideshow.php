@@ -2,15 +2,15 @@
     <div class="row row-custom">
         <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 slideshow-container">
             <div class="mySlides">
-                <img class="slide" src="img/skyline.jpg" style="width:100%" class="img-slideshow">
+                <img class="slide" src="https://acsimacerata.site/img/skyline.jpg" style="width:100%" class="img-slideshow">
             </div>
 
             <div class="mySlides">
-                <img class="slide" src="img/mare.jpg" style="width:100%" class="img-slideshow">
+                <img class="slide" src="https://acsimacerata.site/img/mare.jpg" style="width:100%" class="img-slideshow">
             </div>
 
             <div class="mySlides">
-                <img class="slide" src="img/gatti.jpg" style="width:100%" class="img-slideshow">
+                <img class="slide" src="https://acsimacerata.site/img/gatti.jpg" style="width:100%" class="img-slideshow">
             </div>
         </div>
         <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 text-container">

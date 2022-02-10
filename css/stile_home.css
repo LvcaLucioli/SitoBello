@@ -12,8 +12,9 @@
 .slide {
     border-radius: 13px;
     box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
-    height: 50vh;
-    width: auto;
+    height: auto;
+    width: 50vh;
+    margin-left: -1%;
 }
 
 
@@ -61,6 +62,8 @@
         margin-bottom: 10%;
         height: auto;
         width: 70vh;
+        margin-top: -1%;
+        margin-left: 0;
     }
     .slideshow-wrapper {
         padding: 7%;

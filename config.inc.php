@@ -2,5 +2,5 @@
 	$hostname = 'localhost';
 	$username = 'giorgio';
 	$password = 'galleria';
-	$db_name = 'acsiDB';
+	$db_name = 'acsidb';
 ?>

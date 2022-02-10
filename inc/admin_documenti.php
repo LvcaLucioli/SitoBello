@@ -14,7 +14,6 @@ function ftp_upload(string $dest_file, string $source_file)
 
     // check connection
     if ((!$ftp) || (!$login_result)) {
-        echo "FTP connection has failed!";
         exit;
     } else {
         ftp_chdir($ftp, "/public_html");
@@ -49,18 +48,11 @@ function my_ftp_delete(string $target_file)
 
     // check connection
     if ((!$ftp) || (!$login_result)) {
-        echo "FTP connection has failed!";
-        //echo "Attempted to connect to $ftp_server for user $ftp_user_name"; 
         exit;
     } else {
         ftp_chdir($ftp, "/public_html");
         ftp_chdir($ftp, "documenti");
-
-        if (ftp_delete($ftp, $target_file)) {
-            echo "$target_file deleted successful\n";
-        } else {
-            echo "could not delete $target_file\n";
-        }
+        ftp_delete($ftp, $target_file);
     }
     // close the FTP connection 
     ftp_close($ftp);
@@ -69,22 +61,61 @@ function my_ftp_delete(string $target_file)
 $connection = mysqli_connect($hostname, $username, $password, $db_name)
     or die("connessione fallita");
 
-if (isset($_POST['category_upload'])) {
-    $insert_query = "INSERT INTO `categorie_documenti` (`title``) VALUES 
-            ('" . $_POST['category_title'] . "')";
+if (isset($_POST['categoria_submit'])) {
+    $insert_query = "INSERT INTO `categorie_documenti` (`title`) VALUES 
+            ('" . $_POST['title'] . "')";
     $risultato = mysqli_query($connection, $insert_query)
         or die("Query non valida: " . mysqli_error($connection));
 }
 
-if (isset($_POST['document_upload'])) { 
+if (isset($_POST['documento_submit'])) {
     $insert_query = "INSERT INTO `documenti` (`title`, `path`, `category` ) VALUES 
-            ('" . $_POST['category_title'] . "', '" . $_POST['path'] . "', '" . $_POST['category'] . "')";
+            ('" . $_POST['title'] . "', '" . $_FILES["path"]["name"] . "', '" . $_POST['category'] . "')";
     $risultato = mysqli_query($connection, $insert_query)
+        or die("Query non valida: " . mysqli_error($connection));
+    ftp_upload($_FILES["path"]["name"], $_FILES["path"]["name"]);
+}
+
+if (isset($_POST['edit_documento'])) {
+    $edit_query = "UPDATE `documenti` SET `title`='" . $_POST['title'] . "' WHERE `path`='" . $_POST['path'] . "'";
+    $risultato = mysqli_query($connection, $edit_query)
         or die("Query non valida: " . mysqli_error($connection));
 }
 
+if (isset($_POST['delete_documento'])) {
+    $remove_query = "DELETE FROM `documenti` WHERE `path`='" . $_POST['path'] . "'";
+    $risultato = mysqli_query($connection, $remove_query)
+        or die("Query non valida: " . mysqli_error($connection));
+    my_ftp_delete($_POST['path']);
+}
 
+if (isset($_POST['delete_categoria'])) {
+    $get_paths_query = "SELECT `path` FROM `documenti` WHERE `category`='" . $_POST['category'] . "'";
+    $risultato = mysqli_query($connection, $get_paths_query)
+        or die("Query non valida: " . mysqli_error($connection));
 
+    $row = mysqli_num_rows($risultato);
+
+    $documents = [];
+    for ($i = 0; $i < $row; $i++) {
+        $documents[$i] = mysqli_fetch_assoc($risultato);
+        my_ftp_delete($documents[$i]["path"]);
+    }
+
+    $delete_query = "DELETE FROM `documenti` WHERE `category`='" . $_POST['category'] . "'";
+    $risultato = mysqli_query($connection, $delete_query)
+        or die("Query non valida: " . mysqli_error($connection));
+
+    $delete_query = "DELETE FROM `categorie_documenti` WHERE `title`='" . $_POST['category'] . "'";
+    $risultato = mysqli_query($connection, $delete_query)
+        or die("Query non valida: " . mysqli_error($connection));
+}
+
+if (isset($_POST['edit_categoria'])) {
+    $edit_query = "UPDATE `categorie_documenti` SET `title`='" . $_POST['title'] . "' WHERE `cat_key`='" . $_POST['cat_key'] . "'";
+    $risultato = mysqli_query($connection, $edit_query)
+        or die("Query non valida: " . mysqli_error($connection));
+}
 
 
 
@@ -109,7 +140,7 @@ mysqli_close($connection);
 echo "  <div class='doc-gap'></div>";
 for ($i = 0; $i < $row; $i++) {
 
-    $qr = "SELECT * FROM `documenti` WHERE `category`='".$category[$i]['title']."'";
+    $qr = "SELECT * FROM `documenti` WHERE `category`='" . $category[$i]['title'] . "'";
 
     //connessione al db ed esecuzione query
     $connection = mysqli_connect($hostname, $username, $password, $db_name)
@@ -130,23 +161,43 @@ for ($i = 0; $i < $row; $i++) {
     echo '  <div class="row row-doc">
                 <div class="col-12 header-container header-title-container doc-wrap">
                     <span class="header-title doc-container">
-                        <h4 class="sub-title" style="font-size: x-large">'.$category[$i]['title'].'</h4>
+                        <h4 class="sub-title" style="font-size: x-large">' . $category[$i]['title'] . '
+                            <form method="POST" name="edit_category">
+                                <input type="text" name="title">
+                                <input type="hidden" name="cat_key" value="' . $category[$i]['cat_key'] . '">
+                                <input type="hidden" name="category" value="' . $category[$i]['title'] . '">
+                                <input type="submit" name="edit_categoria" value="modifica categoria">
+                                <input type="submit" name="delete_categoria" value="elimina tutta la categoria">
+                            </form>
+                        </h4>
                         <ul>';
-    
-    for ($j = 0; $j < $row_doc; $j++){
-            echo '          <li><h5>
-                                <a href="'.$documents[$j]['path'].'">'
-                                    .$documents[$j]['title'].
-                                '</a>
-                            </h5></li>';
-    }
 
+    for ($j = 0; $j < $row_doc; $j++) {
+        echo '              <li>
+                                <h5>
+                                    <a href="' . $documents[$j]['path'] . '"  target="_blank">' . $documents[$j]['title'] . '</a>
+                                    <form method="POST" name="edit_documento">
+                                        <input type="text" name="title">
+                                        <input type="hidden" name="category" value="' . $documents[$j]['category'] . '">
+                                        <input type="hidden" name="path" value="' . $documents[$j]['path'] . '">
+                                        <input type="submit" name="edit_documento" value="modifica nome">
+                                        <input type="submit" name="delete_documento" value="elimina">
+                                    </form>
+                                </h5>
+                            </li>';
+    }
     echo '              </ul>
-                        <form id="documenti" method="POST" enctype="multipart/form-data">
-                            <input type="file" name="path"><br>
+                        <form method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="category" value="' . $category[$i]['title'] . '">
+                            titolo<input type="text" name="title"><br>
+                            <input type="file" name="path">
+                            <input type="submit" name="documento_submit" value="nuovo documento">
                         </form> 
                     </span>
                 </div>
             </div>';
 }
-
+echo '<form method="POST" enctype="multipart/form-data">
+            <input type="text" name="title"><br>
+            <input type="submit" name="categoria_submit" value="nuova categoria">
+        </form>';
