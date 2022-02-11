@@ -58,7 +58,7 @@ button.accedi {
 button.accedi:hover {
     background-color: #014896;
     border: 1px solid #014896;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
     padding: 18px 39px 18px 39px;
     color: #fff2e6;
     font-size: 19px;

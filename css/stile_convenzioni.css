@@ -31,6 +31,68 @@
     margin-bottom: 0;
 }
 
+.in_text {
+    margin-top: 1%;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.mod_txtarea {
+    width: 100%;
+    height: 130%;
+}
+
+.conf_msg {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 1%;
+    background-color: white;
+    color: green;
+    margin-left: 2.4%;
+    margin-top: 2%;
+    width: 10%;
+    margin-bottom: 0;
+    border-radius: 13px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    font-weight: bold;
+}
+
+.btn_update {
+    color: #FFF;
+    background-color: #014896;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    border: 1px solid #014896;
+    padding: 1%;
+}
+
+.btn_update:hover {
+    transition: 0.3s ease;
+    border-width: 3px;
+    margin: -2px;
+}
+
+.btn_delete {
+    color: #FFF;
+    background-color: rgb(192, 42, 42);
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    border: 1px solid rgb(192, 42, 42);
+    padding: 1%;
+}
+
+.btn_delete:hover {
+    transition: 0.3s ease;
+    border-width: 3px;
+    margin: -2px;
+}
+
 .conv-container p {
     max-width: 94%;
     margin-left: auto;
@@ -70,5 +132,22 @@
     }
     .conv-container h4 {
         margin-top: 0;
+    }
+    .conf_msg {
+        width: 50%;
+        padding-left: 5%;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+
+    .in_text {
+        width: 91%;
+        margin-left: 15%;
+    }
+    
+    .mod_txtarea {
+        width: 91%;
+        margin-left: 15%;
+        height: 125%;
     }
 }

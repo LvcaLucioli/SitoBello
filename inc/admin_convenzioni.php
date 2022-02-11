@@ -14,10 +14,10 @@ function ftp_upload(string $dest_file)
 
     // check connection
     if ((!$ftp) || (!$login_result)) {
-        echo 'here';
         exit;
     } else {
-        if(move_uploaded_file($_FILES["logo_path"]["tmp_name"], "convenzioni/logos/".$dest_file))  echo " OK ";
+        if (move_uploaded_file($_FILES["logo_path"]["tmp_name"], "convenzioni/logos/" . $dest_file)) 
+            echo "<p class='conf_msg'>Caricamento riuscito</p>";
     }
     // close the FTP connection 
     ftp_close($ftp);
@@ -39,12 +39,11 @@ function my_ftp_delete(string $target_file)
     // check connection
     if ((!$ftp) || (!$login_result)) {
         exit;
-    } else {
+    } else if ($target_file != "") {
         ftp_chdir($ftp, "/public_html");
         ftp_chdir($ftp, "convenzioni");
         ftp_chdir($ftp, "logos");
         ftp_delete($ftp, $target_file);
-
     }
     // close the FTP connection 
     ftp_close($ftp);
@@ -82,7 +81,7 @@ if (isset($_POST['submit'])) { // if mauro is trying to upload or update a news
 
         if ($conv = mysqli_fetch_assoc($isTheConvPresent)) { // should be present at this point
             if ($conv['logo_path'] != $_FILES['logo_path']['name']) { // if uploading new logo [(b: no logo, a: logo), (b: logo, a: logo)]
-                if($conv['logo_path'] != "")    my_ftp_delete($conv['logo_path']);
+                if ($conv['logo_path'] != "")    my_ftp_delete($conv['logo_path']);
                 $dest_file = ftp_upload($conv['convention_key'] . $_FILES["logo_path"]["name"]); // es: 1nomefile.jpg
                 // uploaded new logo
                 $insert_query = "UPDATE `conventions` SET `company_name`='" . $_POST['company_name'] . "',
@@ -121,13 +120,13 @@ if (isset($_POST['submit'])) { // if mauro is trying to upload or update a news
             $key = mysqli_fetch_assoc($risultato);
             $dest_path = $key['convention_key'] . $_FILES["logo_path"]["name"];
             ftp_upload($dest_path);
-            echo $_FILES['logo_path']['name'];
 
             $upload_logo = "UPDATE `conventions` SET `logo_path`='" . $dest_path . "' WHERE `convention_key`='" . $key['convention_key'] . "'";
             $risultato = mysqli_query($connection, $upload_logo)
                 or die("logo: " . mysqli_error($connection));
         }
     }
+    mysqli_close($connection);
 }
 
 
@@ -155,51 +154,62 @@ echo "<div class='conv-gap'></div>";
 echo '<div class="row row-conv">';
 for ($i = 0; $i < $row; $i++) {
     echo '  <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 header-container header-title-container conv-wrap">
-    
-                <form id="update" method="POST" enctype="multipart/form-data">      
-                     
-                    <span class="header-title conv-container">
-                        <span>
-                            <input type="hidden" name="convention_key" value="' . $tmp[$i]['convention_key'] . '"><br>
+                <form id="update" method="POST" enctype="multipart/form-data">       
+                    <span class="header-title conv-container" style="padding-top: 0">
+                        <span style="margin-bottom: 4%">
+                            <input type="hidden" name="convention_key" value="' . $tmp[$i]['convention_key'] . '">
 
-                            <input type="text" name="company_name" value="' . $tmp[$i]['company_name'] . '"><br>';
-    if (isset($tmp[$i]['logo_path']))  echo
-    '<img class="logoACSI-foo" src="https://acsimacerata.site/convenzioni/logos/' . $tmp[$i]['logo_path'] . '" alt=""><br>
-                            <input type="file" name="logo_path"><br>';
-    echo '              <h4 class="sub-title" style="font-size: medium; color: #779bcc; padding: 0;"><b>Descrizione:</b></h4>
-                            
-    <textarea name="description">' . $tmp[$i]['description'] . '</textarea>     
-                            
                             <div class="row" style="margin-top: 3%">
+                                <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Compagnia:</b></h4></div>
+                                <div class="col-8" style="padding: 0">                            
+                                    <input class="in_text" type="text" name="company_name" value="' . $tmp[$i]['company_name'] . '"><br>
+                                </div>
+                            </div>';
+
+                            if (isset($tmp[$i]['logo_path']))  
+                                echo '<img class="logoACSI-foo" src="https://acsimacerata.site/convenzioni/logos/' . $tmp[$i]['logo_path'] . '" alt=""><br>';
+                            
+                            echo '<input type="file" name="logo_path"><br>';
+
+                            
+                            echo '
+                            <div class="row" style="margin-top: 5%">
+                                <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Descrizione:</b></h4></div>
+                                <div class="col-8" style="padding: 0">                            
+                                    <textarea class="mod_txtarea" name="description">' . $tmp[$i]['description'] . '</textarea>     
+                                </div>
+                            </div>
+                            
+                            <div class="row" style="margin-top: 5%">
                                 <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Indirizzo:</b></h4></div>
-                                <div class="col-8">
-                                    <input type="text" name="address" value="' . $tmp[$i]['address'] . '"><br>
+                                <div class="col-8" style="padding: 0">
+                                    <input class="in_text" type="text" name="address" value="' . $tmp[$i]['address'] . '"><br>
                                 </div>
                             </div>
 
                             <div class="row" style="margin-top: 3%">
                                 <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Città:</b></h4></div>
-                                <div class="col-8">
-                                    <input type="text" name="city" value="' . $tmp[$i]['city'] . '"><br>
+                                <div class="col-8" style="padding: 0">
+                                    <input class="in_text" type="text" name="city" value="' . $tmp[$i]['city'] . '"><br>
                                 </div>
                             </div>
 
                             <div class="row" style="margin-top: 3%">
                                 <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Telefono:</b></h4></div>
-                                <div class="col-8">
-                                    <input type="text" name="phone" value="' . $tmp[$i]['phone'] . '"><br>
+                                <div class="col-8" style="padding: 0">
+                                    <input class="in_text" type="text" name="phone" value="' . $tmp[$i]['phone'] . '"><br>
                                 </div>
                             </div>
 
                             <div class="row" style="margin-top: 3%">
                                 <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>E-mail:</b></h4></div>
-                                <div class="col-8">
-                                    <input type="text" name="email" value="' . $tmp[$i]['email'] . '"><br>
+                                <div class="col-8" style="padding: 0">
+                                    <input class="in_text" type="text" name="email" value="' . $tmp[$i]['email'] . '"><br>
                                 </div>
                             </div>
                         </span>
-                        <input type="submit" name="submit" value="aggiorna"><br>
-                        <input type="submit" name="delete" value="cancella">
+                        <input class="btn_update" type="submit" name="submit" value="Modifica"><br>
+                        <input class="btn_delete" type="submit" name="delete" value="Cancella" onclick="return confirm("Are you sure you want to submit this form?");">
                     </span>
                     
                 </form>
@@ -212,14 +222,59 @@ for ($i = 0; $i < $row; $i++) {
 echo '  <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 header-container header-title-container conv-wrap">
             <form id="upload" method="POST" enctype="multipart/form-data">
                 <span class="header-title conv-container">
-                    Compagnia<input type="text" name="company_name"><br>
-                    <input type="file" name="logo_path"><br>
-                    Descrizione<textarea rows="4" cols="50" name="description" maxlenght="400"></textarea>
-                    Indirizzo<input type="text" name="address"><br>
-                    Città<input type="text" name="city"><br>
-                    Telefono<input type="text" name="phone"><br>
-                    E-mail<input type="text" name="email"><br>
-                    <input type="submit" name="submit" value="carica">
+                    <h4 style="font-size: x-large;">Nuova convenzione</h4>
+
+                    <div class="row" style="margin-top: 3%">
+                        <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Compagnia:</b></h4></div>
+                        <div class="col-8" style="padding: 0">                            
+                            <input class="in_text" type="text" name="company_name"><br>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 3%">
+                        <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Logo:</b></h4></div>
+                        <div class="col-8" style="padding: 0; align-content: left; overflow: hidden;">                            
+                            <input class="in_text" type="file" name="logo_path"><br>
+                        </div>
+                    </div>
+                    
+
+                    <div class="row" style="margin-top: 5%">
+                        <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Descrizione:</b></h4></div>
+                        <div class="col-8" style="padding: 0">                            
+                            <textarea class="mod_txtarea" name="description"></textarea>     
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="margin-top: 5%">
+                        <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Indirizzo:</b></h4></div>
+                        <div class="col-8" style="padding: 0">
+                            <input class="in_text" type="text" name="address"><br>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 3%">
+                        <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Città:</b></h4></div>
+                        <div class="col-8" style="padding: 0">
+                            <input class="in_text" type="text" name="city"><br>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 3%">
+                        <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Telefono:</b></h4></div>
+                        <div class="col-8" style="padding: 0">
+                            <input class="in_text" type="text" name="phone"><br>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 3%">
+                        <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>E-mail:</b></h4></div>
+                        <div class="col-8" style="padding: 0">
+                            <input class="in_text" type="text" name="email"><br><br>
+                        </div>
+                    </div>
+
+                    <input class="btn_update" type="submit" name="submit" value="Carica">
                 </span>
             </form>
         </div>';
