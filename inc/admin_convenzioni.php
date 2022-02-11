@@ -160,57 +160,61 @@ for ($i = 0; $i < $row; $i++) {
                             <input type="hidden" name="convention_key" value="' . $tmp[$i]['convention_key'] . '">
 
                             <div class="row" style="margin-top: 3%">
-                                <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Compagnia:</b></h4></div>
-                                <div class="col-8" style="padding: 0">                            
+                                <div class="col-4"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Compagnia:</b></h4></div>
+                                <div class="col-8" style="padding: 0;">                            
                                     <input class="in_text" type="text" name="company_name" value="' . $tmp[$i]['company_name'] . '"><br>
                                 </div>
                             </div>';
 
                             if (isset($tmp[$i]['logo_path'])) {
                                 echo '<img class="logoACSI-foo" src="https://acsimacerata.site/convenzioni/logos/' . $tmp[$i]['logo_path'] . '" alt=""><br>';
-                                echo '<input type="file" name="logo_path" value="' . $tmp[$i]['logo_path'] . '"><br>';
-                            } else {
-                                echo '<input type="file" name="logo_path"><br>';
                             }
-                            
+
                             echo '
+                            <div class="row" style="margin-top: 3%">
+                                <div class="col-4"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Logo:</b></h4></div>
+                                <div class="col-8" style="padding: 0; align-content: left; overflow: hidden;">                            
+                                    <input class="in_file" type="file" name="logo_path"><br>
+                                </div>
+                            </div>
+
                             <div class="row" style="margin-top: 5%">
-                                <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Descrizione:</b></h4></div>
+                                <div class="col-4"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Descrizione:</b></h4></div>
                                 <div class="col-8" style="padding: 0">                            
                                     <textarea class="mod_txtarea" name="description">' . $tmp[$i]['description'] . '</textarea>     
                                 </div>
                             </div>
                             
-                            <div class="row" style="margin-top: 5%">
-                                <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Indirizzo:</b></h4></div>
+                            <div class="row" style="margin-top: 8%">
+                                <div class="col-4"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Indirizzo:</b></h4></div>
                                 <div class="col-8" style="padding: 0">
                                     <input class="in_text" type="text" name="address" value="' . $tmp[$i]['address'] . '"><br>
                                 </div>
                             </div>
 
                             <div class="row" style="margin-top: 3%">
-                                <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Città:</b></h4></div>
+                                <div class="col-4"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Città:</b></h4></div>
                                 <div class="col-8" style="padding: 0">
                                     <input class="in_text" type="text" name="city" value="' . $tmp[$i]['city'] . '"><br>
                                 </div>
                             </div>
 
                             <div class="row" style="margin-top: 3%">
-                                <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Telefono:</b></h4></div>
+                                <div class="col-4"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Telefono:</b></h4></div>
                                 <div class="col-8" style="padding: 0">
                                     <input class="in_text" type="text" name="phone" value="' . $tmp[$i]['phone'] . '"><br>
                                 </div>
                             </div>
 
                             <div class="row" style="margin-top: 3%">
-                                <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>E-mail:</b></h4></div>
+                                <div class="col-4"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>E-mail:</b></h4></div>
                                 <div class="col-8" style="padding: 0">
                                     <input class="in_text" type="text" name="email" value="' . $tmp[$i]['email'] . '"><br>
                                 </div>
                             </div>
                         </span>
                         <input class="btn_update" type="submit" name="submit" value="Modifica"><br>
-                        <input class="btn_delete" type="submit" name="delete" value="Cancella" onclick="return confirm("Are you sure you want to submit this form?");">
+                        <input class="btn_delete" type="submit" name="delete" value="Cancella">
                     </span>
                     
                 </form>
@@ -235,7 +239,7 @@ echo '  <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 header-container heade
                     <div class="row" style="margin-top: 3%">
                         <div class="col-3"><h4 class="sub-title" style="font-size: medium; color: #779bcc;"><b>Logo:</b></h4></div>
                         <div class="col-8" style="padding: 0; align-content: left; overflow: hidden;">                            
-                            <input class="in_text" type="file" name="logo_path"><br>
+                            <input class="in_file" type="file" name="logo_path"><br>
                         </div>
                     </div>
                     
