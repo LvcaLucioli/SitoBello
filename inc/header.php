@@ -29,28 +29,28 @@
 				$out = "";
 				$f = 0;
 
-				if (str_contains($url, "convenzioni")){
+				if (strpos($url, "convenzioni") !== false){
 					$out = $out."<li class='activee'><a href='convenzioni.php' class='active'>Convenzioni</a></li>";
 					$f = 1;
 				} else {
 					$out = $out."<li><a href='convenzioni.php'>Convenzioni</a></li>";
 				}
 
-				if (str_contains($url, "news")){
+				if (strpos($url, "news") !== false){
 					$out = $out."<li class='activee'><a href='news.php' class='active'>News</a></li>";
 					$f = 1;
 				} else {
 					$out = $out."<li><a href='news.php'>News</a></li>";
 				}
 
-				if (str_contains($url, "documenti")){
+				if (strpos($url, "documenti") !== false){
 					$out = $out."<li class='activee'><a href='documenti.php' class='active'>Documenti</a></li>";
 					$f = 1;
 				} else {
 					$out = $out."<li><a href='documenti.php'>Documenti</a></li>";
 				}
 
-				if (str_contains($url, "sport")){
+				if (strpos($url, "sport") !== false){
 					$out = $out."<li class='activee'><a href='sport.php' class='active'>Sport convenzionati</a></li>";
 					$f = 1;
 				} else {
