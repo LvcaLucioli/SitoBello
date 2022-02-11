@@ -166,11 +166,12 @@ for ($i = 0; $i < $row; $i++) {
                                 </div>
                             </div>';
 
-                            if (isset($tmp[$i]['logo_path']))  
+                            if (isset($tmp[$i]['logo_path'])) {
                                 echo '<img class="logoACSI-foo" src="https://acsimacerata.site/convenzioni/logos/' . $tmp[$i]['logo_path'] . '" alt=""><br>';
-                            
-                            echo '<input type="file" name="logo_path"><br>';
-
+                                echo '<input type="file" name="logo_path" value="' . $tmp[$i]['logo_path'] . '"><br>';
+                            } else {
+                                echo '<input type="file" name="logo_path"><br>';
+                            }
                             
                             echo '
                             <div class="row" style="margin-top: 5%">

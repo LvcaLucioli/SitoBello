@@ -184,7 +184,7 @@ for ($i = $row - 1; $i >= 0; $i--) {
     echo '              <input type="file" name="image_path"><br>';
     if ($tmp[$i]['attachment_path'] != "")  echo '
                             <iframe src="http://docs.google.com/gview?url=https://acsimacerata.site/news/attachments/' . $tmp[$i]['attachment_path'] . '&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>';
-    echo '              <input type="file" name="attachment_path"><br>';
+    echo '              <input type="file" name="attachment_path"  accept=".pdf"><br>';
     echo '              <input type="submit" name="submit" value="aggiorna">';
     echo '              <input type="submit" name="delete" value="cancella">';
     echo '          </span>';
@@ -200,7 +200,7 @@ echo '  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 header-container heade
                     titolo<input type="text" name="title"><br>
                     body<textarea name="body" rows="10" cols="50"></textarea>
                     <input type="file" name="image_path"><br>
-                    <input type="file" name="attachment_path"><br>
+                    <input type="file" name="attachment_path" accept=".pdf"><br>
                     <input type="submit" name="submit" value="carica">
                 </span>  
             </form>
