@@ -92,4 +92,7 @@ label {
         width: 94%;
         margin-top: 10%;
     }
+    .text h5 {
+        font-size: 3.2vw;
+    }
 }

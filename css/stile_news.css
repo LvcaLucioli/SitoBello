@@ -12,6 +12,12 @@
     flex-direction: column;
 }
 
+.sub-title {
+    text-align: left;
+    margin-right: 0 !important;
+    margin-left: 20%  !important;
+}
+
 .news-container h4 {
     margin-top: 3%;
     font-size: xx-large;
@@ -26,8 +32,8 @@
     margin-left: auto;
     margin-right: auto;
     font-size: large;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin-top: 2%;
+    margin-bottom: 0;
 }
 
 .news-container img {
@@ -38,22 +44,111 @@
     margin-top: 3%;
     margin-bottom: 3%;
     border-radius: 13px;
-    box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
 }
 
 .news-container iframe {
-    width: 94%;
+    width: 99%;
     height: 105vh;
     margin-left: auto;
     margin-right: auto;
     border-radius: 13px;
-    box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
     margin-bottom: 3%;
     margin-top: 3%;
 }
 
 .row-news {
     overflow: hidden;
+}
+
+.in_text {
+    margin-top: 1%;
+    margin-bottom: 0;
+    width: 85%;
+    border-radius: 4px;
+    border: 1px solid #014896;
+    margin-left: -5%;
+}
+
+.in_file {
+    margin-top: 1%;
+    margin-bottom: 0;
+    width: 85%;
+    margin-left: -5%;
+}
+
+.mod_txtarea {
+    width: 85%;
+    height: 150%;
+    border-radius: 4px;
+    border: 1px solid #014896;
+    margin-left: -5%;
+}
+
+.btn_update {
+    color: #FFF;
+    background-color: #014896;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    border: 1px solid #014896;
+    padding: 1%;
+    width: 85%;
+}
+
+.btn_update:hover {
+    transition: 0.3s ease;
+    border-width: 3px;
+    margin: -2px;
+}
+
+.btn_delete {
+    color: #FFF;
+    background-color: rgb(192, 42, 42);
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    border: 1px solid rgb(192, 42, 42);
+    padding: 1%;
+    width: 85%;
+}
+
+.btn_delete:hover {
+    transition: 0.3s ease;
+    border-width: 3px;
+    margin: -2px;
+}
+
+.attachment {
+    margin-bottom: 3%;
+}
+
+.attachment a {
+    background-color: #014896;
+    padding: 1.5%;
+    border-radius: 13px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    font-size: 1.7vh;
+    color: white;
+}
+
+.attachment-ad {
+    margin-bottom: 3%;
+}
+
+.attachment-ad a {
+    background-color: #014896;
+    padding: 1.5%;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    font-size: 1.7vh;
+    color: white;
+    margin-left: -2%;
 }
 
 
@@ -69,5 +164,8 @@
     }
     .news-gap {
         margin-top: 8%;
+    }
+    .attachment a {
+        border-radius: 8px;
     }
 }

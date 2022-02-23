@@ -112,6 +112,9 @@ header {
     vertical-align: middle;
 }
 
+
+/* footer */
+
 .foo-ter {
     border-radius: 13px;
     background-color: white;
@@ -122,15 +125,115 @@ header {
     display: block;
 }
 
+.row-foot {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .logoACSI-foo {
-    width: 50%;
+    width: 45%;
     height: auto;
-    margin-top: 6%;
-    margin-bottom: 6%;
+    margin-top: 8%;
+    margin-bottom: 8%;
 }
 
 .wrap {
     overflow: hidden;
+}
+
+.sub-title-foo {
+    font-size: 2vh;
+    color: #779bcc;
+    margin-bottom: 0%;
+    margin-top: 1%;
+    text-align: right;
+}
+
+.foot-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.left-text {
+    margin-bottom: 3%;
+    color: #014896;
+    margin-top: 2%;
+    font-size: 3vh;
+}
+
+.contact {
+    color: black;
+    text-align: left;
+    font-size: 1.2vw;
+}
+
+.foot-title-container {
+    display: table;
+}
+
+.foot-title {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.right-gap {
+    margin-top: 5%;
+}
+
+
+
+
+.fa {
+    padding: 2%;
+    padding-left: 1.9%;
+    font-size: 5%;
+    width: 5%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.fa:hover {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.fa-facebook:hover {
+    background: #293b64;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter:hover {
+    background: #33678f;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram:hover {
+    background: #741c5f;
+}
+
+.fa-instagram {
+    background: #c12f9f;
+    color: white;
+}
+
+.social {
+    padding-left: auto;
+    padding-right: auto;
 }
 
 
@@ -179,8 +282,54 @@ header {
         width: 96%;
     }
     .logoACSI-foo {
-        width: 55%;
+        width: 65%;
         height: auto;
+        margin-top: 45%;
+    }
+    .contact {
+        font-size: medium;
+        text-align: left;
+    }
+    .sub-title-foo {
+        text-align: left;
+    }
+    .left-text {
+        font-size: large;
+        margin-top: 0%;
+    }
+    .left-gap {
+        padding-left: 18%;
+    }
+    .left-gap-2 {
+        padding-left: 10%;
+    }
+    .right-gap {
         margin-top: 10%;
     }
+    .social {
+        
+        padding-left: 36%;
+    }
+
+    .sub-title {
+        font-size: 1.2vh;
+    }
+
+    .left-text {
+        font-size: 1.7vh;
+        font-weight: 900;
+    }
+
+    .contact {
+        font-size: 3vw;
+    }
+
+    .right {
+        margin-top: -13%;
+    }
+    
+    .fa {
+        width: 5vh;
+    }
 }
+

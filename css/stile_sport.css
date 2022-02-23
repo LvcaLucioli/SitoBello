@@ -1,5 +1,5 @@
     .sport-wrap {
-        padding: 30%;
+        padding: 5%;
         margin-top: auto;
         margin-bottom: auto;
         padding-top: 0;
@@ -13,6 +13,8 @@
         display: flex;
         flex-direction: column;
         padding: 1%;
+        margin-top: 1.7%;
+        margin-bottom: 1.7%;
     }
     
     .row-sport {
@@ -25,9 +27,32 @@
     
     .sport-container iframe {
         height: 105vh;
+        width: 100%;
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px;
     }
+    
+    .btn {
+        color: #FFF;
+        background-color: #014896;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+        border: 1px solid #014896;
+        padding: 1%;
+        width: 100%;
+        margin-left: -110%;
+    }
+    
+    .btn:hover {
+        color: white;
+        background-color: #00346b;
+    }
+    
+    
+    
     /* mobile style */
     
     @media screen and (min-width:320px) and (max-width:640px) {
@@ -42,5 +67,8 @@
         }
         .sport-container {
             padding: 2%;
+        }
+        .btn {
+            margin-left: -20%;
         }
     }

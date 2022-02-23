@@ -14,7 +14,7 @@
     box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
     height: auto;
     width: 50vh;
-    margin-left: -1%;
+    margin-left: -4%;
 }
 
 
@@ -32,10 +32,12 @@
 }
 
 .text-container {
-    max-width: 80%;
+    max-width: 45%;
     height: auto;
     position: relative;
     margin: auto;
+    margin-left: 0%;
+    padding-left: 0%;
 }
 
 .row-custom {
@@ -45,12 +47,15 @@
 }
 
 .myText {
-    font-size: 1.2vw;
-    max-width: 80%;
+    font-size: 0.95vw;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1%;
 }
 
+.myText p {
+    margin-bottom: 1%;
+}
 
 /* On smaller screens, decrease text size */
 
@@ -59,7 +64,7 @@
         font-size: 11px
     }
     .slide {
-        margin-bottom: 10%;
+        margin-bottom: 5%;
         height: auto;
         width: 70vh;
         margin-top: -1%;
@@ -70,8 +75,17 @@
         width: 100%;
     }
     .myText {
-        margin-bottom: 10%;
+        margin-bottom: 5%;
         max-width: 96%;
         font-size: 3.2vw;
+        margin-top: 0;
+    }
+    .text-container {
+        max-width: 95%;
+        margin-left: auto;
+        padding-left: 2%;
+    }
+    .myText p {
+        margin-bottom: 4%;
     }
 }

@@ -22,6 +22,7 @@
     border-right: 0;
     border-radius: 8px 0 0 8px;
     padding: 1%;
+    margin-top: 0;
 }
 
 .doc-container h4 {
@@ -31,7 +32,7 @@
 
 .doc-container h5 {
     text-align: left;
-    color: #014896;
+    color: white;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -64,6 +65,58 @@
     color: white;
 }
 
+.in_text {
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #014896;
+}
+
+.cat_text {
+    width: 110%;
+    margin-left: -30%;
+}
+
+.in_file {
+    margin-bottom: 0;
+    width: 100%;
+    margin-left: -5%;
+}
+
+.btn_update {
+    color: #014896;
+    background-color: #b5c8e3;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    border: 1px solid #014896;
+    padding: 1%;
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btn_delete {
+    color: #FFF;
+    background-color: rgb(192, 42, 42);
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+    padding: 1%;
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 1px solid rgb(129, 31, 31);
+}
+
+.b1 {
+    padding: 0;
+    padding-left: 5%
+}
 
 /* mobile style */
 
@@ -89,8 +142,33 @@
         margin-top: 2%;
     }
     .sub-title {
-        margin-right: -5.5%;
+        margin-right: -5.7%;
         padding: 2%;
         padding-left: 3%;
+    }
+    .cat_text {
+        width: 90%;
+        margin-left: 4%;
+        margin-top: 1%;
+        margin-bottom: 3%;
+    }
+    .btn_update {
+        margin-left: 4%;
+    }
+    .btn_delete {
+        margin-left: 4%;
+        margin-top: 2%;
+    }
+    .b1 {
+        padding-left: 0;
+    }
+    .text2 {
+        width: 90%;
+        margin-left: 4%;
+        margin-bottom: 4%;
+    }
+    .in_file{
+        margin-left: 4%;
+        margin-bottom: 4%;
     }
 }
